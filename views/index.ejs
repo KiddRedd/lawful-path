@@ -33,10 +33,10 @@
                
          <main class="maxims-box">
              <div id="eng">Maxims in Latin and English</div>
-             <button onclick="copytoClip()"> Copy Maxim to Clipboard</button>
              <!-- COULD ASSIGN MULTIPLE FUNCTIONS ON THIS ONE BUTTON
-            IDEALLY BOTH THE RANDOM GENERATOR AND CLEARINTERVAL -->
+             IDEALLY BOTH THE RANDOM GENERATOR AND CLEARINTERVAL -->
              <button id="btn"> New Maxim</button>
+             <button onclick="copytoClip()"> Copy Maxim to Clipboard</button>
           </main>
 
           <script>
@@ -823,9 +823,16 @@ function rndQuotes(){
     document.getElementById('eng').innerHTML = rndQuote
    }
 
-function copytoClip(){
+// WHAT THE BUTTON NEW MAXIM DOES
+btn.addEventListener('click', function() {
+  
+    let randomQuote = quotes[Math.floor(Math.random() * quotes.length )]
+    eng.innerHTML = randomQuote;
+    })
+
+    function copytoClip(){
 // Grab Text file
-    var copyText = document.getElementById("eng");
+    var copyCon = document.getElementById("eng");
 // Select the text field
     copyText.select();
     copyText.setSelectionRange(0,9999); //mobile devices
@@ -834,14 +841,6 @@ function copytoClip(){
 // Alert the copied text
     alert("Copied the maxim successfully: " + copyText.value);
 }
-
-
-// WHAT THE BUTTON NEW MAXIM DOES
-btn.addEventListener('click', function() {
-  
-    let randomQuote = quotes[Math.floor(Math.random() * quotes.length )]
-    eng.innerHTML = randomQuote;
-    })
 
               
     // CURRENT WAY I HAVE THE QUOTES GOING AT RANDOM UPON SCREEN LOADING
