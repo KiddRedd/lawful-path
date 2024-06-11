@@ -33,6 +33,7 @@
                
          <main class="maxims-box">
              <div id="eng">Maxims in Latin and English</div>
+             <button onclick="copytoClip()"> Copy Maxim to Clipboard</button>
              <!-- COULD ASSIGN MULTIPLE FUNCTIONS ON THIS ONE BUTTON
             IDEALLY BOTH THE RANDOM GENERATOR AND CLEARINTERVAL -->
              <button id="btn"> New Maxim</button>
@@ -92,12 +93,14 @@ const quotes = [
     "Argumentum ab authoritate est fortissimum in lege. An argument drawn from authority is the strongest in law. Co. Litt. 254.",
     "Argumentum simili valet in lege. An argument drawn from a similar case, or analogy, avails in law. Co. Litt. 191.",
     "Augupia verforum sunt judice indigna. A twisting of language is unworthy of a judge. Hob. 343.",
+    // B
     "Bona fides non patitur, ut bis idem exigatur. Natural equity or good faith do no allow us to demand twice the payment of the same thing. Dig. 50, 17, 57.",
     "Boni judicis est ampliare jurisdictionem. It is the part of a good judge to enlarge his jurisdiction; that, his remedial authority. Chan. Prec. 329; 1 Wils 284; 9 M. & Wels. 818.",
     "Boni judicis est causas litium derimere. It is the duty of a good judge to remove the cause of litigation. 2 Co. Inst. 304.",
     "Bonum defendentis ex integr caus, malum ex quolibet defectu. The good of a defendant arises from a perfect case, his harm from some defect. 11 Co. 68.",
     "Bonum judex secundum aequum et bonum judicat, et aequitatem stricto juri praefert. A good judge decides according to justice and right, and prefers equity to strict law. Co. Litt. 24.",
     "Bonum necessarium extra terminos necessitatis non est bonum. Necessary good is not good beyond the bounds of necessity. Hob. 144.",
+    // C 
     "Casus fortuitus non est sperandus, et nemo tenetur devinare. A fortuitous event is not to be foreseen, and no person is held bound to divine it. 4 Co. 66.",
     "Casus omissus et oblivione datus dispositioni communis juris relinquitur. A case omitted and given to oblivion is left to the disposal of the common law. 5 Co. 37.",
     "Catalla just possessa amitti non possunt. Chattels justly possessed cannot be lost. Jenk. Cent. 28.",
@@ -163,6 +166,7 @@ const quotes = [
     "Curiosa et captiosa intepretatio in lege reprobatur. A curious and captious interpretation in the law is to be reproved. 1 Buls. 6.",
     "Currit tempus contra desides et sui juris contemptores. Time runs against the slothful and those who neglect their rights.",
     "Cursus curiae est lex curiae. The practice of the court is the law of the court. 3 Buls. 53.",
+    // D 
     "De fide et officio judicis non recipitur quaestio; sed de scientia, sive error sit juris sive facti. Of the credit and duty of a judge, noquestion can arise; but it is otherwise respecting his knowledge,whether he be mistaken as to the law or fact. Bacon's max. Reg. 17.",
     "De jure judices, de facto juratores, respondent. The judges answer to the law, the jury to the facts.",
     "De minimis non curat lex. The law does not notice or care for trifling matters. Broom's Max. 333; Hob. 88; 5 Hill, N.Y. Rep. 170.",
@@ -252,6 +256,7 @@ const quotes = [
     "Expressum facit cessare tacitum. What is expressed renders what is implied silent.",
     "Extra legem positus est civiliter mortuus. One out of the pale of the law, (an outlaw,) is civilly dead.",
     "Extra territorium jus dicenti non paretur impune. One who exercises jurisdiction out of his territory is not obeyed with impunity.",
+    // F 
     "Facta sunt potentiora verbis. Facts are more powerful than words.",
     "Factum judice quod ad ujus officium non spectat, non ratum est. An act of a judge which does not relate to his office, is of no force. 10 Co. 76.",
     "Factum negantis nulla probatio. Negative facts are not proof.",
@@ -293,12 +298,14 @@ const quotes = [
     "Furiosus absentis loco est. The insane is compared to the absent. Dig. 50, 17, 24, 1.",
     "Furiosus solo furore punitur. A madman is punished by his madness alone. Co. Litt. 247.",
     "Furtum non est ubi initium habet detentionis per dominum rei. It is not theft where the commencement of the detention arises through the owner of the thing. 3 Co. Inst. 107.",
+     // G 
     "Generale tantum valet in generalibus, quanium singulare singulis. What is general prevails or is worth as much among things general, as what is particular among things particular. 11 Co. 59.",
     "Generale dictum generaliter est interpretandum. A general expression is to be construed generally. 8 co. 116.",
     "Generale nihil certum implicat. A general expression implies nothing certain. 2 Co. 34.",
     "Generalia sunt praeponenda singularibus. General things are to be put before particular things.",
     "Generalia verba sunt generaliter intelligenda. General words are understood in a general sense. 3 Co. Inst. 76.",
     "Generalis clausula non porrigitur ad ea quae antea specialiter sunt comprehensa. A general clause does not extend to those things which are previously provided for specially. 8 Co. 154.",
+    // H 
     "Haeredem Deus facit, non homo. God and not man, make the heir.",
     "Haeredem est nomen collectivum. Heir is a collective name.",
     "Haeris est nomen juris, filius est nomen naturae. Heir is a term of law, son one of nature.",
@@ -310,6 +317,7 @@ const quotes = [
     "He who has committed iniquity, shall not have equity. Francis' Max., Max. 2.",
     "He who will have equity done to him, must do equity to the same person. 4 Bouv. Inst. n. 3723.",
     "Hominum caus jus constitutum est. Law is established for the benefit of man.",
+    // I
     "Id quod nostrum est, sine facto nostro ad alium transferi non potest. What belongs to us cannot be transferred to another without our consent. Dig. 50, 17, 11. But this must be understood with this qualification, that the government may take property for public use, paying the owner its value. The title to property may also be acquired, with the consent  of the owner, by a judgment of a competent tribunal.",
     "Id certum est quod certum reddi potest. That is certain which may be rendered certain. 1 Bouv. Inst. n. 929; 2 Bl. Com. 143; 4 Kernt com. 462; 4 Pick 179.",
     "Idem agens et patiens esse non potest. One cannot be agent and patient, in the same matter. Jenk. Cent. 40.",
@@ -413,9 +421,10 @@ const quotes = [
     "Inutilis labor, et sine fructu, non est effectus legis. Useless labor and without fruit, is not the effect of law. Co. Lit. 127.",
     "Invito beneficium non datur. No one is obliged to accept a benefit against his consent. Dig. 50, 17, 69. But if he does not dissent he will be considered as assenting. Vide Assent.",
     "Ipsae legis cupiunt ut jure regantur. The laws themselves require that they should be governed by right. Co. Litt. 174.",
+    // J 
     "Judex ante occulos aequitatem semper habere debet. A judge ought always to have equity before his eyes. Jenk. Cent. 58.",
     "Judex aeuitatem semper spectare debet. A judge ought always to regard equity. Jenk. Cent. 45.",
-     "Judex bonus nihil ex arbitrio suo faciat, nec propositione domesticae voluntatis, sed juxta legis et jura pronunciet. A good judge should do nothing from his own judgment, or from the dictates of his private wishes; but he should pronounce according to law and justice. 7 co. 27.",
+    "Judex bonus nihil ex arbitrio suo faciat, nec propositione domesticae voluntatis, sed juxta legis et jura pronunciet. A good judge should do nothing from his own judgment, or from the dictates of his private wishes; but he should pronounce according to law and justice. 7 co. 27.",
     "Judex debet judicare secundum allegata et probata. The judge ought to decide according to the allegation and the proof.",
     "Judex est lex loquens. The judge is the speaking law. 7 co. 4. ",
     "Judex non potest esse testis in propri caus. A judge cannot be a witness in his own cause. 4 Co. Inst. 279.",
@@ -457,6 +466,7 @@ const quotes = [
     "Justitia non est neganda, non differenda. Justice is not to be denied nor delayed. Jenk. Cent. 93.",
     "Justitia non novit patrem nec matrem, solum veritatem spectat justitia.",
     "Justice knows neither father nor mother, justice looks to truth alone. 1 Buls. 199.",
+    // L 
     "La conscience est la plus changeante des regles. Conscience is the most changeable of rules.",
     "Lata culpa dolo aequiparatur. Gross negligence is equal to fraud.",
     "Le contrat fait la loi. The contract makes the law.",
@@ -505,442 +515,306 @@ const quotes = [
     "Lex prospicit, non respicit. The law looks forward, not backward.",
     "Lex punit mendacium. The law punishes falsehood.",
     "Lex rejicit superflua, pugnantia, incongrua. The law rejects superfluous, contradictory and incongruous things.",
+    "Lex reprobat moram. The law dislikes delay.",
+    "Lex semper dabit remedium. The law always gives a remedy. 3 Bouv. Inst. n. 2411.",
+    "Lexspectat naturae ordinem. The law regards the order of nature. Co. Litt. 197.",
+    "Lex succurit ignoranti. The laws succor the ignorant.",
+    "Lex semper intendit quod convenit ratione. The law always intends what is agreeable to reason. Co. Litt. 78.",
+    "Lex uno ore omnes alloquitur. The law speaks to all with one mouth. 2 Inst. 184.",
+    "Libertas inaestimabilis res est. Liberty is an inestimable good. Dig. 50, 17, 106.",
+    "Liberum corpus aestimationem non recipit. The body of a freeman does not admit of valuation.",
+    "Licet dispositio de interesse furture sit inutilis, tamen potest fieri declaratio praecedens quae fortiatur effectum interveniente novo actu. Although the grant of a future interest be inoperative, yet a declaration precedent may be made, which may take effect, provided a new act intervene. Bacon's Max. Reg. 14.",
+    "Licita bene miscentur, formula nisi juris obstet. Things permitted should be well contrived, lest the form of the law oppose. Bacon's Max. Reg. 24.",
+    "Linea recta semper praefertur transversali. The right line is always preferred to the collateral. Co. Litt. 10.",
+    "Locus contractus regit actum. The place of the contract governs the act.",
+    "Longa possessio est pacis jus. Long possession is the law of peace. Co. Litt. 6.",
+    "Longa possessio parit jus possidendi, et tollit actionem vero domino.",
+    "Long possession produces the right of possession, and takes away from the true owner his action. Co. Litt. 110.",
+    "Longum tempus, et longus usus qui excedit memoria hominum, sufficit pro jure. Long time and long use, beyond the memory of man, suffices for right. Co. Litt. 115.",
+    "Loquendum ut vulgus, sentiendum ut docti. We speak as the common people, we must think as the learned. 7 Co. 11.",
+    // M 
+    "Magister rerum usus; magistra rerum experientia. Use is the master of things; experience is the mistriss of things. Co. Litt. 69, 229.",
+    "Manga negligentia culpa est, magna culpa dolus est. Gross negligence is a fault, gross fault is a fraud. Dig 50, 16, 226.",
+    "Magna culpa dolus est. Great neglect is equivalent to fraud. Dig. 50, 16, 226; 2 Spears, R. 256; 1 Bouv. Inst. n. 646.",
+    "Maihemium est inter crimina majora minimum et inter minora maximum. Mayhem is the least of great crimes, and the greatest of small. Co. Litt. 127.",
+    "Mahemium est homicidium inchoatum. Mayhem is incipient homicide. 3 Inst. 118.",
+    "Major haeriditas venit unicuique nostrum jure et legibus quam parentibus. A greater inheritance comes to every one of us from right and the laws than from parents. 2 Co. Inst. 56.",
+    "Major numerus in se continet minorem. The greater number contains in itself the less.",
+    "Majore paen affectus quam legibus statuta est, non est infamis. One affected with a greater punishment than is provided by law, is not infamous. 4 Co. Inst. 66.",
+    "Majori continet in se minus. The greater includes the less. 19 Vin. Abr. 379.",
+    "Majus dignum trahit in se minus dignum. The more worthy or the greater draws to it the less worthy or the lesser. 5 Vin. Abr. 584, 586.",
+    "Majus est delictum seipsum occidare quam alium. it is a greater crime to kill one's self than another.",
+    "Mala grammatica non vitiat chartam; sed in expositione instrumentorum mala grammatica quoad fieri possit evitanda est. Bad grammar does not vitiate a deed; but in the construction of instruments, bad grammar, as far as it can be done, is to be avoided. 6 Co. 39.",
+    "Maledicta est expositio quae corrumpit textum. It is a bad construction which corrupts the text. 4 Co. 35.",
+    "Maleficia non debent remanere impunita, et impunitas continuum affectum tribuit delinquenti. Evil deeds ought not to remain unpunished, for impunity affords continual excitement to the delinquent. 4 Co. 45.",
+    "Malificia propositus distinguuntur. Evil deeds are distinguished from evil purposes. Jenk. Cent. 290.",
+    "Malitia est acida, est mali animi affectus. Malice is sour, it is the quality of a bad mind. 2 Buls. 49.",
+    "Malitia supplet aetatem. Malice supplies age. Dyer, 104. See Malice.",
+    "Malum hominun est obviandum. The malice of men is to be avoided. 4 Co. 15.",
+    "Malum non praesumitur. Evil is not presumed. 4 Co. 72.",
+    "Malum quo communius eo pejus. The more common the evil, the worse.",
+    "Malus usus est abolendus. An evil custom is to be abolished. Co. Litt. 141.",
+    "Mandata licita recipiunt strictam interpretationem, sed illicita latam et extensam. Lawful commands receive a strict interpretation, but unlawful, a wode or broad construction. Bacon's Max. Reg. 16.",
+    "Mandatarius terminos sobi positos transgredi non potest. A mandatory cannot exceed the bounds of his authority. Jenk. Cent. 53.",
+    "Mandatum nisi gratuitum nullum est. Unless a mandate is gratuitous it is not a mandate. Dig. 17, 1, 4; Inst. 3, 27; 1 Bouv. Inst. n. 1070.",
+    "Manifesta probatione non indigent. Manifest things require no proof. 7 Co. 40.",
+    "Maris et faeminae conjunctio est de jure naturae. The union of husband and wife is founded on the law of nature. 7 Co. 13.",
+    "Matrimonia debent esse libera. Marriages ought to be free.",
+    "Matrimonium subsequens tollit peccatum praecedens. A subsequent marriage cures preceding criminality.",
+    "Maxime ita dicta quia maxima ejus dignitas et certissima auctoritas, atque quod maxim omnibus probetur. A maxim is so called because its dignity is chiefest, and its authority most certain, and because universally approved by all. Co. Litt. 11.",
+    "Maxim paci sunt contraria, vis et injuria. The greatest enemies to peace are force and wrong. Co. Litt. 161.",
+    "Melior est justitia vere praeveniens quam severe pumens. That justice which justly prevents a crime, is better than that which severely punishes it.",
+    "Melior est conditio possidentis et rei quam actoris. Better is the condition of the possessor and that of the defendant than that of the plaintiff. 4 Co. Inst. 180.",
+    "Melior est causa possidentis. The cause of the possessor is preferable. Dig. 50, 17, 126, 2,.",
+    "Melior est conditio possidentis, ubi neuter jus habet. Better is the condition of the possessor, where neither of the two has a right. Jenk. Cent. 118.",
+    "Meliorem conditionem suum facere potest minor, deteriorem nequaquam. A minor can improve or make his condition better, but never worse. Co. Litt. 337.",
+    "Melius est omnia mala pati quam malo concentire. It is better to suffer every wrong or ill, than to consent to it. 3 Co. Inst. 23.",
+    "Melius est recurrere quam malo currere. It is better to recede than to proceed in evil. 4 Inst. 176.",
+    "Melius est in tempore occurrere, quam post causam vulneratum remedium quaerere. It is better to restrain or meet a thing in time, than to see a remedy after a wrong has been inflicted. 2 Inst. 299.",
+    "Mens testatoris in testamentis spectanda est. In wills, the intention of the testator is to be regarded. Jenk. Cent. 277.",
+    "Mentiri est contra mentem ire. To lie is to go against the mind. 3 Buls. 260.",
+    "Merx est quidquid vendi potest. Merchandise is whatever can be sold. 3 Metc. 365. Vide Merchandise.",
+    "Mercis appellatio ad res mobiles tantum pertinet. The term merchandise belongs to movable things only. Dig. 50, 16, 66.",
+    "Minima paena corporalis est major qualibet pecuniari . The smallest bodily punishment is greater than any pecuniary one. 2 Inst. 220.",
+    "Minim mutanda sunt quae certam habuerent interpretationem. Things which have had a certain interpretation are to be altered as little as possible. Co. Litt. 365.",
+    "Minor ante tempus agere non potest in casu proprietatis, nec etiam convenire. A minor before majority cannot act in a case of property, nor even agree. 2 Inst. 291.",
+    "Minor minorem custodire non debet, alios enim praesumitur male regere qui seipsum regere nuscit. A minor ought not to be guardian of a minor, for he is unfit to govern others who does not know how to govern  himself. Co. Litt. 88.",
+    "Misera est servitus, ubi jus est vagum aut incertum. It is a miserable slavery where the law is vague or uncertain. 4 Co. Inst. 246. ",
+    "Mitius imperanti melius paretur. The more mildly one commands the better is he obeyed. 3 Co. Inst. 24.",
+    "Mibilia personam sequuntur, immobilia situm. Movable things follow the person, immovable their locality.",
+    "Modica circumstantia facti jus mutat. The smallest circumstance may change the law.",
+    "Modus et conventio vincunt legem. Manner and agreement overrule the law. 2 Co. 73.",
+    "Modus legel dat donationi. The manner gives law to a gift. Co. Litt. 19 a.",
+    "Moneta est justum medium et mensura rerum commutabilium, nam per meduim monetae fit omnium rerum conveniens, et justa aestimatio. Money is the just medium and measure of all commutable things, for, by the medium of money, a convenient and just estimation of all things is made. Dav. 18. See 1 Bouv. Inst. n. 922.",
+    "Mora reprobatur in lege. Delay is disapproved of in law.",
+    "Mors dicitur ultimum supplicium. Death is denominated the extreme penalty. 3 Inst. 212.",
+    "Mortuus exitus non est exitus. To be dead born is not to be born. Co. Litt. 29. See 2 Paige, 35; Domat, liv. pr l. t. 2, s. 1, n. 4, 6; 2 Bouv. Inst. n. 1721 and 1935.",
+    "Multa conceduntur per obliquum quae non conceduntur de directo. Many things are conceded indirectly which are not allowed directly. 6 co. 47. ",
+    "Multa in jure communi contra rationem disputandi pro communi ultilitate introducta sunt. Many things have been introduced into the common law, with a view to the public good, whic are inconsistent with sound reason. Co. Litt. 70; Broom's Max. 67; 2 Co. R. 75. See 3 T. R. 146; 7 T. R. 252.",
+    "Multa multo exercitatione facilius quam regulis percipies. You will perceive many things more easily by practice than by rules. 4 Co. Inst. 50.",
+    "Multa non vetat lex. quae tamen tacit damnavit. The law forbids many things, which yet it has silently condemned.",
+    "Multa transeunt cum universitate quae non per se transeunt. Many things pass as a whole which would not pass separately.",
+    "Multi multa, non omnia novit. Many men know many things, no one knows everything. 4 Co. Inst. 348.",
+    "Multiplex et indistinctum parit confusionem; et questiones quo simpliciores, eo lucidiores. Multiplicity and indistinctness produce confusion; the more simple questions are the more lucid. Hob. 335.",
+    "Multiplicat transgressione crescat paenae inflictio. The increase of punishment shouldbe in proportion to the increase of crime. 2 Co. Inst. 479.",
+    "Multitudo errantium non parit errori patrocinium. The multitude of those who err is no excuse for error. 11 Co. 75.",
+    "Multitudo imperitorum perdit curiam. A multitude of ignorant practitioners destroys a court. 2 Co. Inst. 219.",
+   // N
+   "Natura appetit perfectum, ita et lex. Nature aspires to perfection, and so does the law. Hob. 144.",
+   "Natura non facit saltum, ita nec lex. nature makes no leap, nor does the law. Co. Litt. 238.",
+   "Natura no facit vacuum, nec lex supervacuum. Nature makes no vacuum, the law no supervacuum. Co. Litt. 79.",
+   "Naturae vis maxima, natura bis maxima. The force of nature is greatest; nature is doubly great. 2 Co. Inst. 564.",
+   "Necessarium est quod non potest aliter se habere. That is necessity which cannot be dispensed with.",
+   "Necessitas est lex temporis et loci. Necessity is the law of a particular time and place. 8 Co. 69; H. H. P. C. 54.",
+   "Necessitaas excusat aut extenuat delicium in capitalibus, quod non operatur idem in civilibus. Necessity excuses or extentuates delinquency in capital cases, but not in civil. Vide Necessity.",
+   "Necessitas facit licitum quod alias non est licitum. Necessity makes that lawful which otherwise is unlawful. 10 Co. 61.",
+   "Necessitas inducit privililegium quoad jura privata. Necessity gives a preference with regard to private rights. Bacon's Max. REg. 5.",
+   "Necessitas non habet legem. Necessity has no law. Plowd. 18. See Necessity, and 15 Vin. Ab. 534; 22 Vin. Ab. 540.",
+   "Necessitas publica major est quam private. Public necessity is greater than private. Bacon's Max. in REg. 5.",
+   "Necessitas quod cogit, defendit. Necessity defends what it compels. H. H. P. C. 54.",
+   "Necessitas vincit legem. Necessity overcomes the law. Hob. 144.",
+   "Negatio conclusionis est error in lege. The negative of a conclusion is error in law. Wing. 268.",
+   "Negatio destruit negationem, et ambae faciunt affirmativum. A negative destroys a negative, and both make an affirmative. Co. Litt. 146.",
+   "Negatio duplex est affirmatio. A double negative is an affirmative.",
+   "Negligentia semper habet infortuniam comitem. Negligence has misfortune for a companion. Co. Litt. 246.",
+   "Neminem oportet esse sapientiorem legibus. No man ought to be wiser than the law. Co. Litt. 97.",
+   "Nemo admittendus est inhabilitare seipsum. No one is allowed to incapacitate himself. Jenk. Cent. 40. Sed vide 'To stultify,' and 5 Whart. 371.",
+   "Nemo agit in seipsum. No man acts against himself; Jenk. Cent. 40; therefore no man can be a judge in his own cause.",
+   "Nemo allegans suam turpitudinem, audiendus est. No one alleging his own turpitude is to be heard as a witness. 4 Inst. 279.",
+   "Nemo bis punitur por eodem delicto. No one can be punished twice for the same crime or misdemeanor. See Non bis in idem.",
+   "Nemo cogitur rem suam vendere, etiam justo pretio. No one is bound to sell his property, even for a just price. Sed vide Eminent Domain.",
+   "Nemo contra factum suum venire potest. No man ca contradict his own deed. 2 Inst. 66.",
+   "Nemo damnum facit, nisi qui id fecit quod facere jus non habet. No one is considered as committing damages, unless he is doing what he has no right to do. dig. 50, 17, 151.",
+   "Nemo dat qui non habet. No one can give who does not possess. Jenk. Cent. 250.",
+   "Nemo de domo sua extrahi debet. A citizen cannot be taken by force from his house to be conducted before a judge or to prison. Dig. 50, 17. This maxim in favor of Roman liberty is much the same as that 'every man's house is his castle.'",
+   "Nemo debet esse judex in propri caus .No one should be judge in his own cause. 12 Co. 113.",
+   "Nemo debet ex alien jactur lucrari. No one ought to gain by another's loss.",
+   "Nemo debet immiscere se rei alienae ad se nihil pertinenti. No one should interfere in what no way concerns him.",
+   "Nemo debet rem suam sine facto aut defectu suo amittere. No one should lose his property without his act or negligence. Co. Litt. 263.",
+   "Nemo est haeres viventes. No one is an heir to the living. 2 Bl. Com. 107; 1 Vin. Ab. 104, tit. Abeyance; Merl. R p. verbo Abeyance; Co. Litt. 342; 2 Bouv. Inst. n. 1694, 1832.",
+   "Nemo ex suo delicto melioroem suam conditionem facere potest. No one can improve his condition by a crime. Dig. 50, 17, 137.",
+   "Nemo ex alterius facto praegravari debet. No man ought to be burdened in consequence of another's act.",
+   "Nemo ex consilio obligatur. No man is bound for the advice he gives. ",
+   "Nemo in propria causa testis ese debet. No one can be a witness in his own cause. But to this rule there are many exceptions.",
+   "Nemo inauditus condemnari debet, si non sit contumax. No man ought to be condemned unheard, unless he be contumacious.",
+   "Nemo nascitur artifex. No one is born an artist. Co. LItt. 97.",
+   "Nemo patriam in qua natus est exuere, nec ligeantiae debitum ejurare possit. No man can renounce the country in which he was born, nor abjure the obligation of his allegiance. Co. LItt. 129. Sed vide Allegiance; Expatriation; Naturalization.",
+   "Nemo plus juris ad alienum transfere potest, quam ispe habent. One cannot transfer to another a right which he has not. Dig. 50, 17, 54; 10 Pet. 161, 175.",
+   "Nemo praesens nisi intelligat. One is not present unless he understands. See Presence.",
+   "Nemo potest contra recordum verificare per patriam. No one can verify by the country against a record. The issue upon a record cannot be tried by a jury.",
+   "Nemo potest esse tenes et dominus. No man can be at the same time tenant nad landlord of the same tenement.",
+   "Nemo potest facere per alium quod per se non potest. No one can do that by another which he cannot do by himself.",
+   "Nemo potest sibi devere. No one can owe to himself. See Confusion of Rights.",
+   "Nemo praesumitur alienam posteritatem suae praetulisse. NO one is presumed to have preferred another's posterity to his own.",
+   "Nemo praesumitur donare. No one is presumed to give.",
+   "Nemo praesumitur esse immemor suae aeternae salutis, et maxim in articulo mortis. No man is presumed to be forgetful of his eternal welfare, and particularly at the point of death. 6 Co. 76.",
+   "Nemo praesumitur malus. No one is presumed to be bad.",
+   "Nemo praesumitru ludere in extremis. No one is presumed to trifle at the point of death.",
+   "Nemo prohibetur plures negotiationes sive artes exercere. No one is restrained from exercising several kinds of business or arts. 11 Co. 54.",
+   "Nemo prohibetur pluribus defensionibus uti. No one is restrained from using several defences. Co. Litt. 304.",
+   "Nemo prudens punit ut praeterita revocentur, sed ut futura praeveniantur. No wise one punishes that things done may be revoked, but that future wrongs may be prevented. 3 Buls. 173.",
+   "Nemo punitur pro alieno delicto. No one is to be punished for the crime or wrong of another.",
+   "Nemo punitur sine injuri, facto, seu defalto. No one is punished unless for some wrong, act or default. 2 Co. Inst. 287.",
+   "Nemo, qui condemnare potest, absolvere non potest. He who may condemn may acquit. Dig. 50, 17, 37.",
+   "Nemo tenetur seipsum accusare. No one is bound to accuse himself.",
+   "Nemo tenetur ad impossibile. No one is bound to an impossibility.",
+   "Nemo tenetur armare adversarum contra se. No one is bound to arm his adversary.",
+   "Nemo tenetur divinare. No one is bound to foretell. 4 Co. 28.",
+   "Nemo tenetur informare qui nescit, sed quisquis scire quod informat. No one is bound to inform about a thing he knows not, but he who gives information is bound to know what he says. Lane, 110.",
+   "Nemo tenetur jurare in suam turpitudinem. No one is bound to testify to his own baseness.",
+   "Nemo tenetur seipsam infortunis et periculis exponere. No one is bound to expose himself to misfortune and dangers. Co. Litt. 253.",
+   "Nemo tenetur seipsum accusare. No man is bound to accuse himself.",
+   "Nemo videtur fraudare eos qui sciunt, et consentiunt. One cannot complain of having been deceived when he knew the fact and gave his consent. Dig. 50, 17, 145.",
+   "Nihil dat qui non habet. He gives nothing who has nothing.",
+   "Nihil de re accrescit ei qui nihil in re quando jus accresceret habet. Nothing accrues to him, who, when the right accrues, has nothing in the subject matter. Co. Litt. 188.",
+   "Nihil facit error nominis cum de corpore constat. An error in the name is nothing when there is certainty as to the person. 11 Co. 21.",
+   "Nihil habet forum ex scen. The court has nothing to do with what is not before it.",
+   "Nihil infra regnum subditos magis conservat in tranquilitate et concordi quam debita legum administratio. Nothing preserves in tranquility and concord those who are subjected to the same government better than a due administration of the laws. 2 Co. Inst. 158.",
+   "Nihil in lege intolerabilius est, eandem rem diverso jure censeri. Nothing in law is more intolerable than to apply the law differently to the same cases. 4 Co. 93.",
+   "Nihil magis justum est quam quod necessarium est. Nothing is more just that what is necessary. Dav. 12.",
+   "Nihil perfectum est dum aliquid restat agendum. Nothing is perfect while something remains to be done. 2 co. 9.",
+   "Nihil possumus contra veritatem. We can do nothing against truth. Doct. & Stu. Dial. 2, c. 6.",
+   "Nihil quod est contra rationem est licitum. Nothing against reason is lawful. Co. Litt. 97.",
+   "Nihil quod inconveniens est licitum est. Nothing inconvenient is lawful.",
+   "Nihil simul inventum est et perfectum. Nothing is invented and perfected at the same moment. Co. Litt. 230.",
+   "Nihil tam naturale est, qu m eo genere quidque dissolvere, quo colligatum est. It is very natural that an obligation should not be dissolved but by the same principles which were observed in contracting it. Dig. 50, 17, 35. See 1 Co. 100; 2 Co. Inst. 359.",
+   "Nihil tam conveniens est naturali aequitati, qu m voluntatem domini voluntis rem suam in alium transferre, ratam haberi. Nothing is more conformable to natural equity, than to confirm the will of an owner who desires to transfer his property to another. Inst. 2, 1, 40; 1 Co. 100.",
+   "Nil tamere novandum. Nothing should be rashly changed. Jenk. Cent. 163.",
+   "Nil facit error nominis, si de corpore constat. An error in the name is immaterial, if the body is certain.",
+   "Nimia subtilitas in jure reporbatur. Too much subtlety is reprobated in law.",
+   "Nimium altercando veritas amiltitur. By too much altercation truth is lost. Hob. 344.",
+   "No man is presumed to do anything against nature. 22 Vin. Ab. 154.",
+   "No man shall take by deed but parties, unless in remainder.",
+   "No man can hold the same land immediately of two several landlords. Co. Litt. 152.",
+   "No man shall set up his infamy as a defence. 2 W. Bl. 364.",
+   "Necessity creates equity.",
+   "No one may be judge in his own cause.",
+   "Nobiliores et beniginores presumptiones in dubiis sunt praeferendae. When doubts arise the most generous and benign presumptions are to be preferred.",
+   "Nomen est quasi rei notamen. A name is, as it were, the note of a thing. 11 Co. 20.",
+   "Nomen non sufficit si res non sit de jure aut de facto. A name does not siffice if there be not a thing by law or by fact. 4 Co. 107.",
+   "Nomina si nescis perit cognitio rerum. If you know not the names of things, the knowledge of things themselves perishes. Co. Litt. 86.",
+   "Nomina sunt notae rerum. Names are the notes of things. 11 Co. 20.",
+   "Nomina sunt mutabilia, res autem immobiles. Names are mutable, but things immutable. 6 Co. 66.",
+   "Nomina sunt symbola rerum. Names are the symbols of things.",
+   "Non accipi debent verba in demonstrationem falsam, quae competunt in limitationem veram. Words ought not to be accepted to import a false demonstration which have effect by way of true limitation. Bacons' Max. REg. 13.",
+   "Non alio modo puniatur aliquis, quam secundum quod se habet condemnatio. A person may not be punished differntly than according to what thesentence enjoins. 3 Co. Inst. 217.",
+   "Non concedantur citationes priusquam exprimatur super qua ne fieri debet citatio. Summonses or citations should not be granted before it is expressed under the circumstances whether the summons ought to be made. 12 Co. 47.",
+   "Non auditor perire volens. One who wishes to perish ought not to be heard. Best on Evidence, 385.",
+   "Non consentit qui errat. He who errs does not conosent. 1 Bouv. Inst. n. 581.",
+   "Non debet, cui plus licet, quod minus est, non licere. He who is permitted to do the greater, may with greater reason do the less. Dig. 50, 17, 21.",
+   "Non decipitur qui scit se decipi. He is not deceived who know himself to be deceived. 5 co. 60.",
+   "Non definitur in jure quid sit conatus. What an attempt is, is not defined in law. 6 Co. 42.",
+   "Non differunt quae concordant re, tametsi non in verbis iisdem. Those things which agree in substance though not in the same words, do not differ. Jenk. Cent. 70.",
+   "Non effecit affectus nisi sequatur effectus. The intention amounts to nothing unless some effect follows. 1 Roll. R. 226.",
+   "Non est arctius vinculum inter homines quam jusjurandum. There is no stronger link among men than an oath. Jenk. Cent. 126.",
+   "Non est disputandum contra principia negantem. There is no disputing against a man denying principles. Co. Litt. 343.",
+   "Non est recedendum communi abservanti . There is no departing from a common observance. 2 Co. 74.",
+   "Non est regula quin fallat. There is no rule but what may fail. Off. Ex. 212.",
+   "Non est certandum de regulis juris. There is no disputing about rules of law.",
+   "Non faciat malum, ut inde veniat bonum. You are not to do evil that good may come of it. 11 Co. 74.",
+   "Non impedit clausula derogatoria, quo minus ab eadem potestate res dissolvantur a quibus constitutuntur. A derogatory clause does not prevent things or acts from being dissolved by the same power, by which they were originally made. Bacon's Max. Reg. 19.",
+   "Non in legendo sed in intelligendo leges consistunt. The laws consist not in being read, but in being understood. 8 co. 167.",
+   "Non Licet quod dispendio licet. That which is permitted only at a loss, is not permitted to be done. Co. Litt. 127.",
+   "Non nasci, et natum mori, pari sunt. Not to be born, and to be dead born, is the same.",
+   "Non obligat lex nisi promulgata. A law is not obligatory unless it be promulgated.",
+   "Non observata forma, infertur adnullatio actus. When the form is not observed, it is inferred that the act is annulled. 12 Co. 7.",
+   "Non omne quod licet honestum est. Everything which is permitted is not becoming. Dig. 50, 17, 144.",
+   "Non omne damnum inducit injuriam. Not every loos produces an injury. See 3 Bl. Com. 219; 1 Smith's Lead. Cas. 131; Broom's Max. 93; 2 Bouv. Inst. n. 2211.",
+   "Non omnium quae a majoribus nostris constituta sunt ratio reddit potest. A reason cannot always be given for the institutions of our ancestors. 4 Co. 78.",
+   "Non potest adduci exception ejusdem rei cujus petitur dissolutio. A plea of the same matter, the dissolution of which is sought by the action, cannot be brought forward. Bacon's Max. Reg. 2. When an action is brought to annul a proceeding, the defendant cannot plead such proceeding in bar. ",
+   "Non praestat impedimentum quod de jure non sortitur effectum. A thing which has no effect in law, is not an impediment. Jenk. Cent. 162.",
+   "Non quod dictum est, sed quod factum est, inspicitur. Not what is said, but what is done, is to be regarded. Co. Litt. 36.",
+   "Non refert an quis assensum suum praefert verbis, an rebus ipsis et factis. It is immaterial whether a man gives his assent by words or by acts and deeds. 10 Co. 52.",
+   "Non refert quid ex aequipolentibus fiat. What may be gathered from words of tantamount meaning, is of no consequence when omitted. 5 Co. 122.",
+   "Non refert quid notum sit judice si notum non sit in forma judici. It matters not what is known to the judge, if it is not known to him judicially. 3 Buls. 115.",
+   "Non refert verbis an factis fit revocatio. It matters not whether a revocation be by words or by acts. Cro. Car. 49.",
+   "Non solum quid licet, sed quidest conveniens considerandum, quia nihil quod inconveniens est licitum. Not only what is permitted, but what is proper, isto be considered, because what is improper is illegal. Co. Litt. 66.",
+   "Non sunt longa ubi nihil est quod demere possis. There is no prolixity where nothing can be omitted. Vaugh. 138.",
+   "Non temere credere, est nervus sapientae. Not to believe rashly is the nerve of wisdom. 5 Co. 114.",
+   "Non videtur quisquam id capere, quod ei necesse est alii restituere. One is not considered as acquiring property in a thing which he is bound to restore. Dig. 50, 17, 51.",
+   "Non videntur qui errant consentire. He who errs is not considered as consenting. Dig. 50, 17, 116.",
+   "Non videtur consensum retinuisse si quis ex praescripto minantis aliquid immutavit. He does not appear to have retained his consent, if he have changed anything through the means of a party threatening. Bacon's Max. Reg. 33.",
+   "Novatio non praesumitur. A novation is not presumed. See Novation.",
+   "Novitas non tam utilitate prodest quam novitate perturbat. Novelty benefits not so much by its utility, as it disturbs by its novelty. Jenk. Cent. 167.",
+   "Novum judicium non dat novum jus, sed declarat antiquum. A new judgment does not make a new law, but declares the old. 10 Co. 42.",
+   "Nul ne doit s'enrichir aux depens des autres. No one ought to enrich himself at the expense of others.",
+   "Nul prendra advantage de son tort demesne. No one shall take advantage of his own wrong.",
+   "Nulla impossibilia aut inhonesta sunt praesumenda. Impossibilities and dishonesty are not to be presumed. Co. Litt. 78.",
+   "Nulle regle sans faute. There is no rule without a fault.",
+   "Nulli enim res sua servit jure servitutis. No one can have a servitude over his own property. Dig. 8, 2, 26; 17 Mass. 443; 2 Bouv. Inst. n. 1600. ",
+   "Nullum exemplum est idem omnibus. No example is the same for all purposes.",
+   "Nullum iniquum praesumendum in jure. Nothing unjust is presumed in law. 4 Co. 72.",
+   "Nullum simile est idem. No simile is the same. Co. Litt. 3.",
+   "Nullus commodum capere potest de injuri su propri . No one shall take advantage of his own wrong. Co. Litt. 148.",
+   "Nullus recedat e curi concellari sine remedio. No one ought to depart out of the court of chancery without a remedy.",
+   "Nunquam fictio sine lege. There is no fiction without law. ",
+   "Nuptias non concubitas, sed consensus facit. Cohabitation does not make the marriage, it is the consent of the parties. Dig 50, 17, 30; 1 Bouv. Inst. n. 239; Co. Litt. 33.",
+   // O 
+   "Obedientia est legis essentia. Obedience is the essence of the law. 11 Co. 100.",
+   "Obtemperandum est consuetudini rationabili tanquam legi. A reasonable custom is to be obeyed like law. 4 Co. 38.",
+   "Officers may not examine the judicial acts of the court.",
+   "Officia magistratus non debent esse venalia. The offices of magistrates ought not to be sold. Co. Litt. 234.",
+   "Officia judicialia non concedantur antequam vacent. Judicial offices ought not to be granted before they are vacant. 11 Co. 4.",
+   "Officit conatus si effectus sequatur. The attempt becomes of consequence, if the effect follows.",
+   "Officium nemini debet esse damnosum. An office ought to be injurious to no one.",
+   "Omissio eorum quae tacite insunt nihil operatur. The omission of those things which are silently expressed is of no consequence.",
+   "Omne actum ab intentione agentis est judicandum. Every act is to be estimated by the intention of the doer.",
+   "Omne crimen ebrietas et incendit et detegit. Drunkenness inflames and produces every crime. Co. Litt. 247.",
+   "Omne magis dignum trahit ad se minus dignum sit antiquius. Every worthier thing draws to it the less worthy, though the latter be more ancient. Co. Litt. 355.",
+   "Omne magnum exemplum habet aliquid ex iniquio, quod publica utilitate compensatur. Every great example has some portion of evil, which is compensated by its public utility. Hob. 279.",
+   "Omne majus continet in se minus. The greater contains in itself the less. Co. Litt. 43.",
+   "Omne majus minus in se complecitur. Always the greater is embraced in the minor. Jenk. Cent. 208.",
+   "Omne testamentum morte consummatum est. Every will is consummated by death. 3 Co. 29.",
+   "Omne sacramentum debet esse de certa scienti . Every oath ought to be founded on certain knowledge. 4 Co. Inst. 279.",
+   "Omnia delicta in aperto leviora sunt. All crimes committed openly are considered lighter. 8 co. 127.",
+   "Omnia praesumuntur contra spoliatorem. All things are presumed against a wrong doer.",
+   "Omnia praesumuntur legitime facta donec probetur in contrarium. All things are presumed to be done legitimately, until the contrary is proved. Co. Litt. 232.",
+   "Omnia praesumuntur rite esse acta. All things are presumed to be done in due form.",
+   "Omnia praesumuntur solemniter esse acta. All things are presumed to be done solemnly. Co. Litt. 6.",
+   "Omnia quae sunt uxoris sunt ipsius viri. All things which are of the wife, belong to the husband. Co. Litt. 112.",
+   "Omnis actio est loquela. Every action is a complaint. Co. Litt. 292.",
+   "Omnis conclusio boni et veri judicii sequitur ex bonis et veris praemissis et dictis juratorem. Every conclusion of a good and true judgment arises from good and true premises, and the sayings of jurors. Co. Litt. 226.",
+   "Omnis consensus t ollit errorem. Every consent removes error. 2 Inst. 123.",
+   "Omnis definitio in jure periculosa est; parum est enim ut non subverti posset. Every devinition in law is perilous, and but a little may reverse it. Dig. 50, 17, 202.",
+   "Omnis exceptio est ipsa quoque regula. An exception is, in itself, a rule. ",
+   "Omnis innovatio plus novitate perturbat quam utilitate prodest. Every innovation disturbs more by its novelty than it benefits by its utility.",
+   "Omnis interpretatio si fieri potest ita fienda est in instrumentis, ut omnes contrarietates amoveantur. The interpretation of insturments is to be made, if they will admit of it, so that all contradictions may be removed. Jenk. Cent. 96.",
+   "Omnis interpretatio vel declarat, vel extendit, vel restringit. Every interpretation either declares, extends or restrains.",
+   "Omnis regula suas patitur exceptiones. All rules of law are liable to exceptions.",
+   "Omnis privatio praesupponit habitum. Every privation presupposes former enjoyment. Co. Litt. 339.",
+   "Omnis ratihabitio retro trahitur et mandato aequiparatur. Every consent given to what has already been done, has a retrospective effect and equals a command. Co. Litt. 207.",
+   "Once a fraud, always a fraud. 13 Vin. Ab. 539.",
+   "Once a mortgage always a mortgage.",
+   "Once a recompense always a recompense. 19 Vin. Ab. 277.",
+   "One should be just before he is generous.",
+   "One may not do an act to himself.",
+   "Oportet quod certa res deducatur in judicium. A thing, to be brought to judgment, must be certain or definite. Jenk. Cent. 84.",
+   "Oportet quod certa sit res venditur. A thing, to be sold, must be certain or definite.",
+   "Optima est lex, quae minimum relinquit arbitrio judicis. That is the best system of law which confides as little as possible to the discretion of the judge. Bac. De Aug. Sci. Aph. 46.",
+   "Optimam esse legem, quae minimum relinquit arbitrio judicis; id quod certitudo ejus praestat. That law is the best which leaves the least discretion to the judge; and this is an advantage which results from certainty. Bacon, De Aug. Sc. Aph. 8.",
+   "Optimus judex, qui minimum sibi. He is the best judge who relies as little as possible on his own discretion. Bac. De Aug. Sci. Aph. 46.",
+   "Optimus interpretandi modus est sic legis interpretare ut leges legibus accordant. The best mode of interpreting laws isto make them accord. 8 Co. 169.",
+   "Optimus interpres rerum usus. Usage is the best interpretor of things. 2 Inst. 282.",
+   "Optimus legum interpres consuetudo. Custom is the best interpretor of laws. 4 Inst. 75.",
+   "Ordine placitandi servato, servatur et jus. The order of pleading being preserved, the law is preserved. Co. Litt. 363.",
+   "Origo rei inspici debet. The origin of a thing ought to be inquired into. 1 Co. 99.",
+    // P
+   "Paci sunt maxime contraria, vis et injuria. Force and wrong are greatly contrary to peace. Co. Litt. 161.",
+   "Pacta privata juri publico derogare non possunt. Private contracts cannot derogate from the public law. 7 Co. 23.",
+   "Pacto aliquod licitum est, quid sine pacto non admittitur. By a contract something is permitted, which, without it, could not be admitted. Co.Litt. 166.",
+   "Par in parem imperium non habet. An equal has no power over an equal. Jenk. Cent. 174. Example: One of two judges of the same court cannot commit the other for contempt.",
+   "Paria copulantur paribus. Things unite with similar things.",
+   "Paribus sententiis reus absolvitur. When opinions are equal, a defendant is acquitted. 4 Inst. 64.",
+   "Parte quacumque integranta sublata, tollitur totum. An integral part being taken away, the whole is taken away. 3 Co. 41.",
+   "Partus ex legitimo thoro non certius noscit matrem quam genitorem suam. The offspring of a legitimate bed knows not his mother more certainly than his father. Fortes. c. 42.",
+   "Partus sequitur ventrem. The offspring follow the condition of the mother. This is the law in the case of slaves and animals; 1 Bouv. Inst. n. 167, 502; but with regard to freemen, children follow the condition of the father.",
+   "Parum differunt quae re concordant. Thing differ but littel which agree in substance. 2 Buls. 86.",
+   "Parum est latam esse sententiam, nisi mandetur executioni. It is not enough that sentence should be given unless it is put in execution. Co. Litt. 289.",
+   "Parum proficit scire quid fieri debet, si non cognoscas quomodo sit facturum. It avails little to know what ought to be done, if you do not know how it is to be done. 2 Co. Inst. 503.",
+   
 
-"Lex reprobat moram. The law dislikes delay.",
 
-"Lex semper dabit remedium. The law always gives a remedy. 3 Bouv. Inst. n. 2411.",
 
-"Lexspectat naturae ordinem. The law regards the order of nature. Co. Litt. 197.",
-
-"Lex succurit ignoranti. The laws succor the ignorant.",
-
-"Lex semper intendit quod convenit ratione. The law always intends what is agreeable to reason. Co. Litt. 78.",
-
-"Lex uno ore omnes alloquitur. The law speaks to all with one mouth. 2 Inst. 184.",
-
-"Libertas inaestimabilis res est. Liberty is an inestimable good. Dig. 50, 17, 106.",
-
-"Liberum corpus aestimationem non recipit. The body of a freeman does not admit of valuation.",
-
-"Licet dispositio de interesse furture sit inutilis, tamen potest fieri declaratio praecedens quae fortiatur effectum interveniente novo actu. Although the grant of a future interest be inoperative, yet a declaration precedent may be made, which may take effect, provided a new act intervene. Bacon's Max. Reg. 14.",
-
-"Licita bene miscentur, formula nisi juris obstet. Things permitted should be well contrived, lest the form of the law oppose. Bacon's Max. Reg. 24.",
-
-"Linea recta semper praefertur transversali. The right line is always preferred to the collateral. Co. Litt. 10.",
-
-"Locus contractus regit actum. The place of the contract governs the act.",
-
-"Longa possessio est pacis jus. Long possession is the law of peace. Co. Litt. 6.",
-
-"Longa possessio parit jus possidendi, et tollit actionem vero domino.",
-
-"Long possession produces the right of possession, and takes away from the true owner his action. Co. Litt. 110.",
-
-"Longum tempus, et longus usus qui excedit memoria hominum, sufficit pro jure. Long time and long use, beyond the memory of man, suffices for right. Co. Litt. 115.",
-
-"Loquendum ut vulgus, sentiendum ut docti. We speak as the common people, we must think as the learned. 7 Co. 11.",
-
-"Magister rerum usus; magistra rerum experientia. Use is the master of things; experience is the mistriss of things. Co. Litt. 69, 229.",
-
-"Manga negligentia culpa est, magna culpa dolus est. Gross negligence is a fault, gross fault is a fraud. Dig 50, 16, 226.",
-
-"Magna culpa dolus est. Great neglect is equivalent to fraud. Dig. 50, 16, 226; 2 Spears, R. 256; 1 Bouv. Inst. n. 646.",
-
-"Maihemium est inter crimina majora minimum et inter minora maximum. Mayhem is the least of great crimes, and the greatest of small. Co. Litt. 127.",
-
-"Mahemium est homicidium inchoatum. Mayhem is incipient homicide. 3 Inst. 118.",
-
-"Major haeriditas venit unicuique nostrum jure et legibus quam parentibus. A greater inheritance comes to every one of us from right and the laws than from parents. 2 Co. Inst. 56.",
-
-"Major numerus in se continet minorem. The greater number contains in itself the less.",
-
-"Majore paen affectus quam legibus statuta est, non est infamis. One affected with a greater punishment than is provided by law, is not infamous. 4 Co. Inst. 66.",
-
-"Majori continet in se minus. The greater includes the less. 19 Vin. Abr. 379.",
-
-"Majus dignum trahit in se minus dignum. The more worthy or the greater draws to it the less worthy or the lesser. 5 Vin. Abr. 584, 586.",
-
-"Majus est delictum seipsum occidare quam alium. it is a greater crime to kill one's self than another.",
-
-"Mala grammatica non vitiat chartam; sed in expositione instrumentorum mala grammatica quoad fieri possit evitanda est. Bad grammar does not vitiate a deed; but in the construction of instruments, bad grammar, as far as it can be done, is to be avoided. 6 Co. 39.",
-
-"Maledicta est expositio quae corrumpit textum. It is a bad construction which corrupts the text. 4 Co. 35.",
-
-"Maleficia non debent remanere impunita, et impunitas continuum affectum tribuit delinquenti. Evil deeds ought not to remain unpunished, for impunity affords continual excitement to the delinquent. 4 Co. 45.",
-
-"Malificia propositus distinguuntur. Evil deeds are distinguished from evil purposes. Jenk. Cent. 290.",
-
-"Malitia est acida, est mali animi affectus. Malice is sour, it is the quality of a bad mind. 2 Buls. 49.",
-
-"Malitia supplet aetatem. Malice supplies age. Dyer, 104. See Malice.",
-
-"Malum hominun est obviandum. The malice of men is to be avoided. 4 Co. 15.",
-
-"Malum non praesumitur. Evil is not presumed. 4 Co. 72.",
-
-"Malum quo communius eo pejus. The more common the evil, the worse.",
-
-"Malus usus est abolendus. An evil custom is to be abolished. Co. Litt. 141.",
-
-"Mandata licita recipiunt strictam interpretationem, sed illicita latam et extensam. Lawful commands receive a strict interpretation, but unlawful, a wode or broad construction. Bacon's Max. Reg. 16.",
-
-"Mandatarius terminos sobi positos transgredi non potest. A mandatory cannot exceed the bounds of his authority. Jenk. Cent. 53.",
-
-"Mandatum nisi gratuitum nullum est. Unless a mandate is gratuitous it is not a mandate. Dig. 17, 1, 4; Inst. 3, 27; 1 Bouv. Inst. n. 1070.",
-
-"Manifesta probatione non indigent. Manifest things require no proof. 7 Co. 40.",
-
-"Maris et faeminae conjunctio est de jure naturae. The union of husband and wife is founded on the law of nature. 7 Co. 13.",
-
-"Matrimonia debent esse libera. Marriages ought to be free.",
-
-"Matrimonium subsequens tollit peccatum praecedens. A subsequent marriage cures preceding criminality.",
-
-"Maxime ita dicta quia maxima ejus dignitas et certissima auctoritas, atque quod maxim omnibus probetur. A maxim is so called because its dignity is chiefest, and its authority most certain, and because universally approved by all. Co. Litt. 11.",
-
-"Maxim paci sunt contraria, vis et injuria. The greatest enemies to peace are force and wrong. Co. Litt. 161.",
-
-"Melior est justitia vere praeveniens quam severe pumens. That justice which justly prevents a crime, is better than that which severely punishes it.",
-
-"Melior est conditio possidentis et rei quam actoris. Better is the condition of the possessor and that of the defendant than that of the plaintiff. 4 Co. Inst. 180.",
-
-"Melior est causa possidentis. The cause of the possessor is preferable. Dig. 50, 17, 126, 2,.",
-
-"Melior est conditio possidentis, ubi neuter jus habet. Better is the condition of the possessor, where neither of the two has a right. Jenk. Cent. 118.",
-
-"Meliorem conditionem suum facere potest minor, deteriorem nequaquam. A minor can improve or make his condition better, but never worse. Co. Litt. 337.",
-
-"Melius est omnia mala pati quam malo concentire. It is better to suffer every wrong or ill, than to consent to it. 3 Co. Inst. 23.",
-
-"Melius est recurrere quam malo currere. It is better to recede than to proceed in evil. 4 Inst. 176.",
-
-"Melius est in tempore occurrere, quam post causam vulneratum remedium quaerere. It is better to restrain or meet a thing in time, than to see a remedy after a wrong has been inflicted. 2 Inst. 299.",
-
-"Mens testatoris in testamentis spectanda est. In wills, the intention of the testator is to be regarded. Jenk. Cent. 277.",
-
-"Mentiri est contra mentem ire. To lie is to go against the mind. 3 Buls. 260.",
-
-"Merx est quidquid vendi potest. Merchandise is whatever can be sold. 3 Metc. 365. Vide Merchandise.",
-
-"Mercis appellatio ad res mobiles tantum pertinet. The term merchandise belongs to movable things only. Dig. 50, 16, 66.",
-
-"Minima paena corporalis est major qualibet pecuniari . The smallest bodily punishment is greater than any pecuniary one. 2 Inst. 220.",
-
-"Minim mutanda sunt quae certam habuerent interpretationem. Things which have had a certain interpretation are to be altered as little as possible. Co. Litt. 365.",
-
-"Minor ante tempus agere non potest in casu proprietatis, nec etiam convenire. A minor before majority cannot act in a case of property, nor even agree. 2 Inst. 291.",
-
-"Minor minorem custodire non debet, alios enim praesumitur male regere qui seipsum regere nuscit. A minor ought not to be guardian of a minor, for he is unfit to govern others who does not know how to govern  himself. Co. Litt. 88.",
-
-"Misera est servitus, ubi jus est vagum aut incertum. It is a miserable slavery where the law is vague or uncertain. 4 Co. Inst. 246. ",
-
-"Mitius imperanti melius paretur. The more mildly one commands the better is he obeyed. 3 Co. Inst. 24.",
-
-"Mibilia personam sequuntur, immobilia situm. Movable things follow the person, immovable their locality.",
-
-"Modica circumstantia facti jus mutat. The smallest circumstance may change the law.",
-
-"Modus et conventio vincunt legem. Manner and agreement overrule the law. 2 Co. 73.",
-
-"Modus legel dat donationi. The manner gives law to a gift. Co. Litt. 19 a.",
-
-"Moneta est justum medium et mensura rerum commutabilium, nam per meduim monetae fit omnium rerum conveniens, et justa aestimatio. Money is the just medium and measure of all commutable things, for, by the medium of money, a convenient and just estimation of all things is made. Dav. 18. See 1 Bouv. Inst. n. 922.",
-
-"Mora reprobatur in lege. Delay is disapproved of in law.",
-
-"Mors dicitur ultimum supplicium. Death is denominated the extreme penalty. 3 Inst. 212.",
-
-"Mortuus exitus non est exitus. To be dead born is not to be born. Co. Litt. 29. See 2 Paige, 35; Domat, liv. pr l. t. 2, s. 1, n. 4, 6; 2 Bouv. Inst. n. 1721 and 1935.",
-
-"Multa conceduntur per obliquum quae non conceduntur de directo. Many things are conceded indirectly which are not allowed directly. 6 co. 47. ",
-
-"Multa in jure communi contra rationem disputandi pro communi ultilitate introducta sunt. Many things have been introduced into the common law, with a view to the public good, whic are inconsistent with sound reason. Co. Litt. 70; Broom's Max. 67; 2 Co. R. 75. See 3 T. R. 146; 7 T. R. 252.",
-
-"Multa multo exercitatione facilius quam regulis percipies. You will perceive many things more easily by practice than by rules. 4 Co. Inst. 50.",
-
-"Multa non vetat lex. quae tamen tacit damnavit. The law forbids many things, which yet it has silently condemned.",
-
-"Multa transeunt cum universitate quae non per se transeunt. Many things pass as a whole which would not pass separately.",
-
-"Multi multa, non omnia novit. Many men know many things, no one knows everything. 4 Co. Inst. 348.",
-
-"Multiplex et indistinctum parit confusionem; et questiones quo simpliciores, eo lucidiores. Multiplicity and indistinctness produce confusion; the more simple questions are the more lucid. Hob. 335.",
-
-"Multiplicat transgressione crescat paenae inflictio. The increase of punishment shouldbe in proportion to the increase of crime. 2 Co. Inst. 479.",
-
-"Multitudo errantium non parit errori patrocinium. The multitude of those who err is no excuse for error. 11 Co. 75.",
-
-"Multitudo imperitorum perdit curiam. A multitude of ignorant practitioners destroys a court. 2 Co. Inst. 219.",
-
-"Natura appetit perfectum, ita et lex. Nature aspires to perfection, and so does the law. Hob. 144.",
-
-"Natura non facit saltum, ita nec lex. nature makes no leap, nor does the law. Co. Litt. 238.",
-
-"Natura no facit vacuum, nec lex supervacuum. Nature makes no vacuum, the law no supervacuum. Co. Litt. 79.",
-
-"Naturae vis maxima, natura bis maxima. The force of nature is greatest; nature is doubly great. 2 Co. Inst. 564.",
-
-"Necessarium est quod non potest aliter se habere. That is necessity which cannot be dispensed with.",
-
-"Necessitas est lex temporis et loci. Necessity is the law of a particular time and place. 8 Co. 69; H. H. P. C. 54.",
-
-"Necessitaas excusat aut extenuat delicium in capitalibus, quod non operatur idem in civilibus. Necessity excuses or extentuates delinquency in capital cases, but not in civil. Vide Necessity.",
-
-"Necessitas facit licitum quod alias non est licitum. Necessity makes that lawful which otherwise is unlawful. 10 Co. 61.",
-
-"Necessitas inducit privililegium quoad jura privata. Necessity gives a preference with regard to private rights. Bacon's Max. REg. 5.",
-
-"Necessitas non habet legem. Necessity has no law. Plowd. 18. See Necessity, and 15 Vin. Ab. 534; 22 Vin. Ab. 540.",
-
-"Necessitas publica major est quam private. Public necessity is greater than private. Bacon's Max. in REg. 5.",
-
-"Necessitas quod cogit, defendit. Necessity defends what it compels. H. H. P. C. 54.",
-
-"Necessitas vincit legem. Necessity overcomes the law. Hob. 144.",
-
-"Negatio conclusionis est error in lege. The negative of a conclusion is error in law. Wing. 268.",
-
-"Negatio destruit negationem, et ambae faciunt affirmativum. A negative destroys a negative, and both make an affirmative. Co. Litt. 146.",
-
-"Negatio duplex est affirmatio. A double negative is an affirmative.",
-
-"Negligentia semper habet infortuniam comitem. Negligence has misfortune for a companion. Co. Litt. 246.",
-
-"Neminem oportet esse sapientiorem legibus. No man ought to be wiser than the law. Co. Litt. 97.",
-
-"Nemo admittendus est inhabilitare seipsum. No one is allowed to incapacitate himself. Jenk. Cent. 40. Sed vide 'To stultify,' and 5 Whart. 371.",
-
-"Nemo agit in seipsum. No man acts against himself; Jenk. Cent. 40; therefore no man can be a judge in his own cause.",
-
-"Nemo allegans suam turpitudinem, audiendus est. No one alleging his own turpitude is to be heard as a witness. 4 Inst. 279.",
-
-"Nemo bis punitur por eodem delicto. No one can be punished twice for the same crime or misdemeanor. See Non bis in idem.",
-
-"Nemo cogitur rem suam vendere, etiam justo pretio. No one is bound to sell his property, even for a just price. Sed vide Eminent Domain.",
-
-"Nemo contra factum suum venire potest. No man ca contradict his own deed. 2 Inst. 66.",
-
-"Nemo damnum facit, nisi qui id fecit quod facere jus non habet. No one is considered as committing damages, unless he is doing what he has no right to do. dig. 50, 17, 151.",
-
-"Nemo dat qui non habet. No one can give who does not possess. Jenk. Cent. 250.",
-
-"Nemo de domo sua extrahi debet. A citizen cannot be taken by force from his house to be conducted before a judge or to prison. Dig. 50, 17. This maxim in favor of Roman liberty is much the same as that 'every man's house is his castle.'",
-
-"Nemo debet esse judex in propri caus .No one should be judge in his own cause. 12 Co. 113.",
-
-"Nemo debet ex alien jactur lucrari. No one ought to gain by another's loss.",
-
-"Nemo debet immiscere se rei alienae ad se nihil pertinenti. No one should interfere in what no way concerns him.",
-
-"Nemo debet rem suam sine facto aut defectu suo amittere. No one should lose his property without his act or negligence. Co. Litt. 263.",
-
-"Nemo est haeres viventes. No one is an heir to the living. 2 Bl. Com. 107; 1 Vin. Ab. 104, tit. Abeyance; Merl. R p. verbo Abeyance; Co. Litt. 342; 2 Bouv. Inst. n. 1694, 1832.",
-
-"Nemo ex suo delicto melioroem suam conditionem facere potest. No one can improve his condition by a crime. Dig. 50, 17, 137.",
-
-"Nemo ex alterius facto praegravari debet. No man ought to be burdened in consequence of another's act.",
-
-"Nemo ex consilio obligatur. No man is bound for the advice he gives. ",
-
-"Nemo in propria causa testis ese debet. No one can be a witness in his own cause. But to this rule there are many exceptions.",
-
-"Nemo inauditus condemnari debet, si non sit contumax. No man ought to be condemned unheard, unless he be contumacious.",
-
-"Nemo nascitur artifex. No one is born an artist. Co. LItt. 97.",
-
-"Nemo patriam in qua natus est exuere, nec ligeantiae debitum ejurare possit. No man can renounce the country in which he was born, nor abjure the obligation of his allegiance. Co. LItt. 129. Sed vide Allegiance; Expatriation; Naturalization.",
-
-"Nemo plus juris ad alienum transfere potest, quam ispe habent. One cannot transfer to another a right which he has not. Dig. 50, 17, 54; 10 Pet. 161, 175.",
-
-"Nemo praesens nisi intelligat. One is not present unless he understands. See Presence.",
-
-"Nemo potest contra recordum verificare per patriam. No one can verify by the country against a record. The issue upon a record cannot be tried by a jury.",
-
-"Nemo potest esse tenes et dominus. No man can be at the same time tenant nad landlord of the same tenement.",
-
-"Nemo potest facere per alium quod per se non potest. No one can do that by another which he cannot do by himself.",
-
-"Nemo potest sibi devere. No one can owe to himself. See Confusion of Rights.",
-
-"Nemo praesumitur alienam posteritatem suae praetulisse. NO one is presumed to have preferred another's posterity to his own.",
-
-"Nemo praesumitur donare. No one is presumed to give.",
-
-"Nemo praesumitur esse immemor suae aeternae salutis, et maxim in articulo mortis. No man is presumed to be forgetful of his eternal welfare, and particularly at the point of death. 6 Co. 76.",
-
-"Nemo praesumitur malus. No one is presumed to be bad.",
-
-"Nemo praesumitru ludere in extremis. No one is presumed to trifle at the point of death.",
-
-"Nemo prohibetur plures negotiationes sive artes exercere. No one is restrained from exercising several kinds of business or arts. 11 Co. 54.",
-
-"Nemo prohibetur pluribus defensionibus uti. No one is restrained from using several defences. Co. Litt. 304.",
-
-"Nemo prudens punit ut praeterita revocentur, sed ut futura praeveniantur. No wise one punishes that things done may be revoked, but that future wrongs may be prevented. 3 Buls. 173.",
-
-"Nemo punitur pro alieno delicto. No one is to be punished for the crime or wrong of another.",
-
-"Nemo punitur sine injuri, facto, seu defalto. No one is punished unless for some wrong, act or default. 2 Co. Inst. 287.",
-
-"Nemo, qui condemnare potest, absolvere non potest. He who may condemn may acquit. Dig. 50, 17, 37.",
-
-"Nemo tenetur seipsum accusare. No one is bound to accuse himself.",
-
-"Nemo tenetur ad impossibile. No one is bound to an impossibility.",
-
-"Nemo tenetur armare adversarum contra se. No one is bound to arm his adversary.",
-
-"Nemo tenetur divinare. No one is bound to foretell. 4 Co. 28.",
-
-"Nemo tenetur informare qui nescit, sed quisquis scire quod informat. No one is bound to inform about a thing he knows not, but he who gives information is bound to know what he says. Lane, 110.",
-
-"Nemo tenetur jurare in suam turpitudinem. No one is bound to testify to his own baseness.",
-
-"Nemo tenetur seipsam infortunis et periculis exponere. No one is bound to expose himself to misfortune and dangers. Co. Litt. 253.",
-
-"Nemo tenetur seipsum accusare. No man is bound to accuse himself.",
-
-"Nemo videtur fraudare eos qui sciunt, et consentiunt. One cannot complain of having been deceived when he knew the fact and gave his consent. Dig. 50, 17, 145.",
-
-"Nihil dat qui non habet. He gives nothing who has nothing.",
-
-"Nihil de re accrescit ei qui nihil in re quando jus accresceret habet. Nothing accrues to him, who, when the right accrues, has nothing in the subject matter. Co. Litt. 188.",
-
-"Nihil facit error nominis cum de corpore constat. An error in the name is nothing when there is certainty as to the person. 11 Co. 21.",
-
-"Nihil habet forum ex scen. The court has nothing to do with what is not before it.",
-
-"Nihil infra regnum subditos magis conservat in tranquilitate et concordi quam debita legum administratio. Nothing preserves in tranquility and concord those who are subjected to the same government better than a due administration of the laws. 2 Co. Inst. 158.",
-
-"Nihil in lege intolerabilius est, eandem rem diverso jure censeri. Nothing in law is more intolerable than to apply the law differently to the same cases. 4 Co. 93.",
-
-"Nihil magis justum est quam quod necessarium est. Nothing is more just that what is necessary. Dav. 12.",
-
-"Nihil perfectum est dum aliquid restat agendum. Nothing is perfect while something remains to be done. 2 co. 9.",
-
-"Nihil possumus contra veritatem. We can do nothing against truth. Doct. & Stu. Dial. 2, c. 6.",
-
-"Nihil quod est contra rationem est licitum. Nothing against reason is lawful. Co. Litt. 97.",
-
-"Nihil quod inconveniens est licitum est. Nothing inconvenient is lawful.",
-
-"Nihil simul inventum est et perfectum. Nothing is invented and perfected at the same moment. Co. Litt. 230.",
-
-"Nihil tam naturale est, qu m eo genere quidque dissolvere, quo colligatum est. It is very natural that an obligation should not be dissolved but by the same principles which were observed in contracting it. Dig. 50, 17, 35. See 1 Co. 100; 2 Co. Inst. 359.",
-
-"Nihil tam conveniens est naturali aequitati, qu m voluntatem domini voluntis rem suam in alium transferre, ratam haberi. Nothing is more conformable to natural equity, than to confirm the will of an owner who desires to transfer his property to another. Inst. 2, 1, 40; 1 Co. 100.",
-
-"Nil tamere novandum. Nothing should be rashly changed. Jenk. Cent. 163.",
-"Nil facit error nominis, si de corpore constat. An error in the name is immaterial, if the body is certain.",
-"Nimia subtilitas in jure reporbatur. Too much subtlety is reprobated in law.",
-"Nimium altercando veritas amiltitur. By too much altercation truth is lost. Hob. 344.",
-"No man is presumed to do anything against nature. 22 Vin. Ab. 154.",
-"No man shall take by deed but parties, unless in remainder.",
-"No man can hold the same land immediately of two several landlords. Co. Litt. 152.",
-"No man shall set up his infamy as a defence. 2 W. Bl. 364.",
-"Necessity creates equity.",
-"No one may be judge in his own cause.",
-"Nobiliores et beniginores presumptiones in dubiis sunt praeferendae. When doubts arise the most generous and benign presumptions are to be preferred.",
-"Nomen est quasi rei notamen. A name is, as it were, the note of a thing. 11 Co. 20.",
-"Nomen non sufficit si res non sit de jure aut de facto. A name does not siffice if there be not a thing by law or by fact. 4 Co. 107.",
-"Nomina si nescis perit cognitio rerum. If you know not the names of things, the knowledge of things themselves perishes. Co. Litt. 86.",
-"Nomina sunt notae rerum. Names are the notes of things. 11 Co. 20.",
-"Nomina sunt mutabilia, res autem immobiles. Names are mutable, but things immutable. 6 Co. 66.",
-"Nomina sunt symbola rerum. Names are the symbols of things.",
-"Non accipi debent verba in demonstrationem falsam, quae competunt in limitationem veram. Words ought not to be accepted to import a false demonstration which have effect by way of true limitation. Bacons' Max. REg. 13.",
-"Non alio modo puniatur aliquis, quam secundum quod se habet condemnatio. A person may not be punished differntly than according to what thesentence enjoins. 3 Co. Inst. 217.",
-"Non concedantur citationes priusquam exprimatur super qua ne fieri debet citatio. Summonses or citations should not be granted before it is expressed under the circumstances whether the summons ought to be made. 12 Co. 47.",
-"Non auditor perire volens. One who wishes to perish ought not to be heard. Best on Evidence, 385.",
-"Non consentit qui errat. He who errs does not conosent. 1 Bouv. Inst. n. 581.",
-"Non debet, cui plus licet, quod minus est, non licere. He who is permitted to do the greater, may with greater reason do the less. Dig. 50, 17, 21.",
-"Non decipitur qui scit se decipi. He is not deceived who know himself to be deceived. 5 co. 60.",
-"Non definitur in jure quid sit conatus. What an attempt is, is not defined in law. 6 Co. 42.",
-"Non differunt quae concordant re, tametsi non in verbis iisdem. Those things which agree in substance though not in the same words, do not differ. Jenk. Cent. 70.",
-
-"Non effecit affectus nisi sequatur effectus. The intention amounts to nothing unless some effect follows. 1 Roll. R. 226.",
-
-"Non est arctius vinculum inter homines quam jusjurandum. There is no stronger link among men than an oath. Jenk. Cent. 126.",
-
-"Non est disputandum contra principia negantem. There is no disputing against a man denying principles. Co. Litt. 343.",
-
-"Non est recedendum communi abservanti . There is no departing from a common observance. 2 Co. 74.",
-
-"Non est regula quin fallat. There is no rule but what may fail. Off. Ex. 212.",
-
-"Non est certandum de regulis juris. There is no disputing about rules of law.",
-
-"Non faciat malum, ut inde veniat bonum. You are not to do evil that good may come of it. 11 Co. 74.",
-
-"Non impedit clausula derogatoria, quo minus ab eadem potestate res dissolvantur a quibus constitutuntur. A derogatory clause does not prevent things or acts from being dissolved by the same power, by which they were originally made. Bacon's Max. Reg. 19.",
-
-"Non in legendo sed in intelligendo leges consistunt. The laws consist not in being read, but in being understood. 8 co. 167.",
-
-"Non Licet quod dispendio licet. That which is permitted only at a loss, is not permitted to be done. Co. Litt. 127.",
-
-"Non nasci, et natum mori, pari sunt. Not to be born, and to be dead born, is the same.",
-
-"Non obligat lex nisi promulgata. A law is not obligatory unless it be promulgated.",
-
-"Non observata forma, infertur adnullatio actus. When the form is not observed, it is inferred that the act is annulled. 12 Co. 7.",
-
-"Non omne quod licet honestum est. Everything which is permitted is not becoming. Dig. 50, 17, 144.",
-
-"Non omne damnum inducit injuriam. Not every loos produces an injury. See 3 Bl. Com. 219; 1 Smith's Lead. Cas. 131; Broom's Max. 93; 2 Bouv. Inst. n. 2211.",
-
-"Non omnium quae a majoribus nostris constituta sunt ratio reddit potest. A reason cannot always be given for the institutions of our ancestors. 4 Co. 78.",
-"Non potest adduci exception ejusdem rei cujus petitur dissolutio. A plea of the same matter, the dissolution of which is sought by the action, cannot be brought forward. Bacon's Max. Reg. 2. When an action is brought to annul a proceeding, the defendant cannot plead such proceeding in bar. ",
-"Non praestat impedimentum quod de jure non sortitur effectum. A thing which has no effect in law, is not an impediment. Jenk. Cent. 162.",
-"Non quod dictum est, sed quod factum est, inspicitur. Not what is said, but what is done, is to be regarded. Co. Litt. 36.",
-"Non refert an quis assensum suum praefert verbis, an rebus ipsis et factis. It is immaterial whether a man gives his assent by words or by acts and deeds. 10 Co. 52.",
-"Non refert quid ex aequipolentibus fiat. What may be gathered from words of tantamount meaning, is of no consequence when omitted. 5 Co. 122.",
-
-"Non refert quid notum sit judice si notum non sit in forma judici. It matters not what is known to the judge, if it is not known to him judicially. 3 Buls. 115.",
-
-"Non refert verbis an factis fit revocatio. It matters not whether a revocation be by words or by acts. Cro. Car. 49.",
-
-"Non solum quid licet, sed quidest conveniens considerandum, quia nihil quod inconveniens est licitum. Not only what is permitted, but what is proper, isto be considered, because what is improper is illegal. Co. Litt. 66.",
-
-"Non sunt longa ubi nihil est quod demere possis. There is no prolixity where nothing can be omitted. Vaugh. 138.",
-
-"Non temere credere, est nervus sapientae. Not to believe rashly is the nerve of wisdom. 5 Co. 114.",
-
-"Non videtur quisquam id capere, quod ei necesse est alii restituere. One is not considered as acquiring property in a thing which he is bound to restore. Dig. 50, 17, 51.",
-
-"Non videntur qui errant consentire. He who errs is not considered as consenting. Dig. 50, 17, 116.",
-
-"Non videtur consensum retinuisse si quis ex praescripto minantis aliquid immutavit. He does not appear to have retained his consent, if he have changed anything through the means of a party threatening. Bacon's Max. Reg. 33.",
-
-"Novatio non praesumitur. A novation is not presumed. See Novation.",
-
-"Novitas non tam utilitate prodest quam novitate perturbat. Novelty benefits not so much by its utility, as it disturbs by its novelty. Jenk. Cent. 167.",
-
-"Novum judicium non dat novum jus, sed declarat antiquum. A new judgment does not make a new law, but declares the old. 10 Co. 42.",
-
-"Nul ne doit s'enrichir aux depens des autres. No one ought to enrich himself at the expense of others.",
-
-"Nul prendra advantage de son tort demesne. No one shall take advantage of his own wrong.",
-
-"Nulla impossibilia aut inhonesta sunt praesumenda. Impossibilities and dishonesty are not to be presumed. Co. Litt. 78.",
-
-"Nulle regle sans faute. There is no rule without a fault.",
-
-"Nulli enim res sua servit jure servitutis. No one can have a servitude over his own property. Dig. 8, 2, 26; 17 Mass. 443; 2 Bouv. Inst. n. 1600. ",
-
-"Nullum exemplum est idem omnibus. No example is the same for all purposes.",
-
-"Nullum iniquum praesumendum in jure. Nothing unjust is presumed in law. 4 Co. 72.",
-
-"Nullum simile est idem. No simile is the same. Co. Litt. 3.",
-
-"Nullus commodum capere potest de injuri su propri . No one shall take advantage of his own wrong. Co. Litt. 148.",
-
-"Nullus recedat e curi concellari sine remedio. No one ought to depart out of the court of chancery without a remedy.",
-
-"Nunquam fictio sine lege. There is no fiction without law. ",
-
-"Nuptias non concubitas, sed consensus facit. Cohabitation does not make the marriage, it is the consent of the parties. Dig 50, 17, 30; 1 Bouv. Inst. n. 239; Co. Litt. 33.",
-
-"Obedientia est legis essentia. Obedience is the essence of the law. 11 Co. 100.",
 ];
 
 // QUOTES RANDOM FUNCTION
@@ -948,6 +822,18 @@ function rndQuotes(){
     const rndQuote = quotes[Math.floor(Math.random() * quotes.length )];
     document.getElementById('eng').innerHTML = rndQuote
    }
+
+function copytoClip(){
+// Grab Text file
+    var copyText = document.getElementById("eng");
+// Select the text field
+    copyText.select();
+    copyText.setSelectionRange(0,9999); //mobile devices
+// Copy the text inside the text field
+    navigator.clipboard.writeText(copyText);
+// Alert the copied text
+    alert("Copied the maxim successfully: " + copyText.value);
+}
 
 
 // WHAT THE BUTTON NEW MAXIM DOES
@@ -959,7 +845,7 @@ btn.addEventListener('click', function() {
 
               
     // CURRENT WAY I HAVE THE QUOTES GOING AT RANDOM UPON SCREEN LOADING
-       setInterval(rndQuotes, "20000");
+       setInterval(rndQuotes, "30000");
 
         </script>
             

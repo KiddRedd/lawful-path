@@ -1583,196 +1583,72 @@ Nunquam fictio sine lege. There is no fiction without law.
 Nuptias non concubitas, sed consensus facit. Cohabitation does not make the marriage, it is the consent of the parties. Dig 50, 17, 30; 1 Bouv. Inst. n. 239; Co. Litt. 33.
 
 Obedientia est legis essentia. Obedience is the essence of the law. 11 Co. 100.
-// got here
 
-Obtemperandum est consuetudini rationabili tanquam legi. A reasonable
-custom is to be obeyed like law. 4 Co. 38.
-
+Obtemperandum est consuetudini rationabili tanquam legi. A reasonable custom is to be obeyed like law. 4 Co. 38.
 Officers may not examine the judicial acts of the court.
-
-Officia magistratus non debent esse venalia. The offices of magistrates
-ought not to be sold. Co. Litt. 234.
-
-Officia judicialia non concedantur antequam vacent. Judicial offices
-ought not to be granted before they are vacant. 11 Co. 4.
-
-Officit conatus si effectus sequatur. The attempt becomes of
-consequence, if the effect follows.
-
-Officium nemini debet esse damnosum. An office ought to be injurious to
-no one.
-
-Omissio eorum quae tacite insunt nihil operatur. The omission of those
-things which are silently expressed is of no consequence.
-
-Omne actum ab intentione agentis est judicandum. Every act is to be
-estimated by the intention of the doer.
-
-Omne crimen ebrietas et incendit et detegit. Drunkenness inflames and
-produces every crime. Co. Litt. 247.
-
-Omne magis dignum trahit ad se minus dignum sit antiquius. Every
-worthier thing draws to it the less worthy, though the latter be more
+Officia magistratus non debent esse venalia. The offices of magistrates ought not to be sold. Co. Litt. 234.
+Officia judicialia non concedantur antequam vacent. Judicial offices ought not to be granted before they are vacant. 11 Co. 4.
+Officit conatus si effectus sequatur. The attempt becomes of consequence, if the effect follows.
+Officium nemini debet esse damnosum. An office ought to be injurious to no one.
+Omissio eorum quae tacite insunt nihil operatur. The omission of those things which are silently expressed is of no consequence.
+Omne actum ab intentione agentis est judicandum. Every act is to be estimated by the intention of the doer.
+Omne crimen ebrietas et incendit et detegit. Drunkenness inflames and produces every crime. Co. Litt. 247.
+Omne magis dignum trahit ad se minus dignum sit antiquius. Every worthier thing draws to it the less worthy, though the latter be more
 ancient. Co. Litt. 355.
-
-Omne magnum exemplum habet aliquid ex iniquio, quod publica utilitate
-compensatur. Every great example has some portion of evil, which is
-compensated by its public utility. Hob. 279.
-
-Omne majus continet in se minus. The greater contains in itself the
-less. Co. Litt. 43.
-
-Omne majus minus in se complecitur. Always the greater is embraced in
-the minor. Jenk. Cent. 208.
-
-Omne testamentum morte consummatum est. Every will is consummated by
-death. 3 Co. 29.
-
-Omne sacramentum debet esse de certa scienti . Every oath
-<https://www.lawfulpath.com/ref/bouvier/oath-.shtml> ought to be founded
-on certain knowledge. 4 Co. Inst. 279.
-
-Omnia delicta in aperto leviora sunt. All crimes committed openly are
-considered lighter. 8 co. 127.
-
-Omnia praesumuntur contra spoliatorem. All things are presumed against a
-wrong doer.
-
-Omnia praesumuntur legitime facta donec probetur in contrarium. All
-things are presumed to be done legitimately, until the contrary is
-proved. Co. Litt. 232.
-
-Omnia praesumuntur rite esse acta. All things are presumed to be done in
-due form.
-
-Omnia praesumuntur solemniter esse acta. All things are presumed to be
-done solemnly. Co. Litt. 6.
-
-Omnia quae sunt uxoris sunt ipsius viri. All things which are of the
-wife, belong to the husband. Co. Litt. 112.
-
+Omne magnum exemplum habet aliquid ex iniquio, quod publica utilitate compensatur. Every great example has some portion of evil, which is compensated by its public utility. Hob. 279.
+Omne majus continet in se minus. The greater contains in itself the less. Co. Litt. 43.
+Omne majus minus in se complecitur. Always the greater is embraced in the minor. Jenk. Cent. 208.
+Omne testamentum morte consummatum est. Every will is consummated by death. 3 Co. 29.
+Omne sacramentum debet esse de certa scienti . Every oath ought to be founded on certain knowledge. 4 Co. Inst. 279.
+Omnia delicta in aperto leviora sunt. All crimes committed openly are considered lighter. 8 co. 127.
+Omnia praesumuntur contra spoliatorem. All things are presumed against a wrong doer.
+Omnia praesumuntur legitime facta donec probetur in contrarium. All things are presumed to be done legitimately, until the contrary is proved. Co. Litt. 232.
+Omnia praesumuntur rite esse acta. All things are presumed to be done in due form.
+Omnia praesumuntur solemniter esse acta. All things are presumed to be done solemnly. Co. Litt. 6.
+Omnia quae sunt uxoris sunt ipsius viri. All things which are of the wife, belong to the husband. Co. Litt. 112.
 Omnis actio est loquela. Every action is a complaint. Co. Litt. 292.
-
-Omnis conclusio boni et veri judicii sequitur ex bonis et veris
-praemissis et dictis juratorem. Every conclusion of a good and true
-<https://www.lawfulpath.com/ref/bouvier/truth-.shtml> judgment arises
-from good and true <https://www.lawfulpath.com/ref/bouvier/truth-.shtml>
-premises, and the sayings of jurors. Co. Litt. 226.
-
+Omnis conclusio boni et veri judicii sequitur ex bonis et veris praemissis et dictis juratorem. Every conclusion of a good and true judgment arises from good and true premises, and the sayings of jurors. Co. Litt. 226.
 Omnis consensus t ollit errorem. Every consent removes error. 2 Inst. 123.
+Omnis definitio in jure periculosa est; parum est enim ut non subverti posset. Every devinition in law is perilous, and but a little may reverse it. Dig. 50, 17, 202.
+Omnis exceptio est ipsa quoque regula. An exception is, in itself, a rule. 
+Omnis innovatio plus novitate perturbat quam utilitate prodest. Every innovation disturbs more by its novelty than it benefits by its utility.
+Omnis interpretatio si fieri potest ita fienda est in instrumentis, ut omnes contrarietates amoveantur. The interpretation of insturments is to be made, if they will admit of it, so that all contradictions may be removed. Jenk. Cent. 96.
+Omnis interpretatio vel declarat, vel extendit, vel restringit. Every interpretation either declares, extends or restrains.
+Omnis regula suas patitur exceptiones. All rules of law are liable to exceptions.
 
-Omnis definitio in jure periculosa est; parum est enim ut non subverti
-posset. Every devinition in law is perilous, and but a little may
-reverse it. Dig. 50, 17, 202.
 
-Omnis exceptio est ipsa quoque regula. An exception is, in itself, a rule.
 
-Omnis innovatio plus novitate perturbat quam utilitate prodest. Every
-innovation disturbs more by its novelty than it benefits by its utility.
 
-Omnis interpretatio si fieri potest ita fienda est in instrumentis, ut
-omnes contrarietates amoveantur. The interpretation of insturments is to
-be made, if they will admit of it, so that all contradictions may be
-removed. Jenk. Cent. 96.
-
-Omnis interpretatio vel declarat, vel extendit, vel restringit. Every
-interpretation either declares, extends or restrains.
-
-Omnis regula suas patitur exceptiones. All rules of law are liable to
-exceptions.
-
-Omnis privatio praesupponit habitum. Every privation presupposes former
-enjoyment. Co. Litt. 339.
-
-Omnis ratihabitio retro trahitur et mandato aequiparatur. Every consent
-given to what has already been done, has a retrospective effect and
-equals a command. Co. Litt. 207.
-
+Omnis privatio praesupponit habitum. Every privation presupposes former enjoyment. Co. Litt. 339.
+Omnis ratihabitio retro trahitur et mandato aequiparatur. Every consent given to what has already been done, has a retrospective effect and equals a command. Co. Litt. 207.
 Once a fraud, always a fraud. 13 Vin. Ab. 539.
-
 Once a mortgage always a mortgage.
-
 Once a recompense always a recompense. 19 Vin. Ab. 277.
-
 One should be just before he is generous.
-
 One may not do an act to himself.
-
-Oportet quod certa res deducatur in judicium. A thing, to be brought to
-judgment, must be certain or definite. Jenk. Cent. 84.
-
-Oportet quod certa sit res venditur. A thing, to be sold, must be
-certain or definite.
-
-Optima est lex, quae minimum relinquit arbitrio judicis. That is the
-best system of law which confides as little as possible to the
-discretion of the judge. Bac. De Aug. Sci. Aph. 46.
-
-Optimam esse legem, quae minimum relinquit arbitrio judicis; id quod
-certitudo ejus praestat. That law is the best which leaves the least
-discretion to the judge; and this is an advantage which results from
-certainty. Bacon, De Aug. Sc. Aph. 8.
-
-Optimus judex, qui minimum sibi. He is the best judge who relies as
-little as possible on his own discretion. Bac. De Aug. Sci. Aph. 46.
-
-Optimus interpretandi modus est sic legis interpretare ut leges legibus
-accordant. The best mode of interpreting laws isto make them accord. 8
-Co. 169.
-
-Optimus interpres rerum usus. Usage is the best interpretor of things. 2
-Inst. 282.
-
-Optimus legum interpres consuetudo. Custom is the best interpretor of
-laws. 4 Inst. 75.
-
-Ordine placitandi servato, servatur et jus. The order of pleading being
-preserved, the law is preserved. Co. Litt. 363.
-
-Origo rei inspici debet. The origin of a thing ought to be inquired
-into. 1 Co. 99.
-
-Paci sunt maxime contraria, vis et injuria. Force and wrong are greatly
-contrary to peace. Co. Litt. 161.
-
-Pacta privata juri publico derogare non possunt. Private contracts
-cannot derogate from the public law. 7 Co. 23.
-
-Pacto aliquod licitum est, quid sine pacto non admittitur. By a contract
-something is permitted, which, without it, could not be admitted. Co.
-Litt. 166.
-
-Par in parem imperium non habet. An equal has no power over an equal.
-Jenk. Cent. 174. Example: One of two judges of the same court cannot
-commit the other for contempt.
-
+Oportet quod certa res deducatur in judicium. A thing, to be brought to judgment, must be certain or definite. Jenk. Cent. 84.
+Oportet quod certa sit res venditur. A thing, to be sold, must be certain or definite.
+Optima est lex, quae minimum relinquit arbitrio judicis. That is the best system of law which confides as little as possible to the discretion of the judge. Bac. De Aug. Sci. Aph. 46.
+Optimam esse legem, quae minimum relinquit arbitrio judicis; id quod certitudo ejus praestat. That law is the best which leaves the least discretion to the judge; and this is an advantage which results from certainty. Bacon, De Aug. Sc. Aph. 8.
+Optimus judex, qui minimum sibi. He is the best judge who relies as little as possible on his own discretion. Bac. De Aug. Sci. Aph. 46.
+Optimus interpretandi modus est sic legis interpretare ut leges legibus accordant. The best mode of interpreting laws isto make them accord. 8 Co. 169.
+Optimus interpres rerum usus. Usage is the best interpretor of things. 2 Inst. 282.
+Optimus legum interpres consuetudo. Custom is the best interpretor of laws. 4 Inst. 75.
+Ordine placitandi servato, servatur et jus. The order of pleading being preserved, the law is preserved. Co. Litt. 363.
+Origo rei inspici debet. The origin of a thing ought to be inquired into. 1 Co. 99.
+Paci sunt maxime contraria, vis et injuria. Force and wrong are greatly contrary to peace. Co. Litt. 161.
+Pacta privata juri publico derogare non possunt. Private contracts cannot derogate from the public law. 7 Co. 23.
+Pacto aliquod licitum est, quid sine pacto non admittitur. By a contract something is permitted, which, without it, could not be admitted. Co.Litt. 166.
+Par in parem imperium non habet. An equal has no power over an equal. Jenk. Cent. 174. Example: One of two judges of the same court cannot commit the other for contempt.
 Paria copulantur paribus. Things unite with similar things.
-
-paribus sententiis reus absolvitur. When opinions are equal, a defendant
-is acquitted. 4 Inst. 64.
-
-Parte quacumque integranta sublata, tollitur totum. An integral part
-being taken away, the whole is taken away. 3 Co. 41.
-
-Partus ex legitimo thoro non certius noscit matrem quam genitorem suam.
-The offspring of a legitimate bed knows not his mother more certainly
-than his father. Fortes. c. 42.
-
-Partus sequitur ventrem. The offspring follow the condition of the
-mother. This is the law in the case of slaves and animals; 1 Bouv. Inst.
-n. 167, 502; but with regard to freemen, children follow the condition
-of the father.
-
-Parum differunt quae re concordant. Thing differ but littel which agree
-in substance. 2 Buls. 86.
-
-Parum est latam esse sententiam, nisi mandetur executioni. It is not
-enough that sentence should be given unless it is put in execution. Co.
-Litt. 289.
-
-Parum proficit scire quid fieri debet, si non cognoscas quomodo sit
-facturum. It avails little to know what ought to be done, if you do not
-know how it is to be done. 2 Co. Inst. 503.
+Paribus sententiis reus absolvitur. When opinions are equal, a defendant is acquitted. 4 Inst. 64.
+Parte quacumque integranta sublata, tollitur totum. An integral part being taken away, the whole is taken away. 3 Co. 41.
+Partus ex legitimo thoro non certius noscit matrem quam genitorem suam. The offspring of a legitimate bed knows not his mother more certainly than his father. Fortes. c. 42.
+Partus sequitur ventrem. The offspring follow the condition of the mother. This is the law in the case of slaves and animals; 1 Bouv. Inst. n. 167, 502; but with regard to freemen, children follow the condition of the father.
+Parum differunt quae re concordant. Thing differ but littel which agree in substance. 2 Buls. 86.
+Parum est latam esse sententiam, nisi mandetur executioni. It is not enough that sentence should be given unless it is put in execution. Co. Litt. 289.
+Parum proficit scire quid fieri debet, si non cognoscas quomodo sit facturum. It avails little to know what ought to be done, if you do not know how it is to be done. 2 Co. Inst. 503.
+// got here
 
 Patria potestas in pietate debet, non in atrocitate consistere. Paternal
 power should consist in affection, not in atrocity.
