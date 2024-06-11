@@ -1442,7 +1442,6 @@ Nihil tam conveniens est naturali aequitati, qu m voluntatem domini voluntis rem
 
 Nil tamere novandum. Nothing should be rashly changed. Jenk. Cent. 163. 
 
-// got here
 
 Nil facit error nominis, si de corpore constat. An error in the name is immaterial, if the body is certain.
 
@@ -1472,8 +1471,7 @@ nomina si nescis perit cognitio rerum. If you know not the names of things, the 
 
 Nomina sunt notae rerum. Names are the notes of things. 11 Co. 20.
 
-Nomina sunt mutabilia, res autem immobiles. Names are mutable, but
-things immutable. 6 Co. 66.
+Nomina sunt mutabilia, res autem immobiles. Names are mutable, but things immutable. 6 Co. 66.
 
 Nomina sunt symbola rerum. Names are the symbols of things.
 
@@ -1486,6 +1484,7 @@ Non concedantur citationes priusquam exprimatur super qua ne fieri debet citatio
 Non auditor perire volens. One who wishes to perish ought not to be heard. Best on Evidence, 385.
 
 Non consentit qui errat. He who errs does not conosent. 1 Bouv. Inst. n. 581.
+
 
 Non debet, cui plus licet, quod minus est, non licere. He who is permitted to do the greater, may with greater reason do the less. Dig. 50, 17, 21.
 
@@ -1584,6 +1583,7 @@ Nunquam fictio sine lege. There is no fiction without law.
 Nuptias non concubitas, sed consensus facit. Cohabitation does not make the marriage, it is the consent of the parties. Dig 50, 17, 30; 1 Bouv. Inst. n. 239; Co. Litt. 33.
 
 Obedientia est legis essentia. Obedience is the essence of the law. 11 Co. 100.
+// got here
 
 Obtemperandum est consuetudini rationabili tanquam legi. A reasonable
 custom is to be obeyed like law. 4 Co. 38.
