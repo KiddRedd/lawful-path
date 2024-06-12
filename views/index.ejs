@@ -830,19 +830,9 @@ btn.addEventListener('click', function() {
     eng.innerHTML = randomQuote;
     })
 
-    function copytoClip(){
-// Grab Text file
-    var copyText = document.getElementById("eng");
-// Select the text field
-    copyText.select();
-    copyText.setSelectionRange(0,9999); //mobile devices
-// Copy the text inside the text field
-    navigator.clipboard.writeText(copyText);
-// Alert the copied text
-    alert("Copied the maxim successfully: " + copyText.value);
-}
 
-              
+    // create a copytoclipboard page
+    
     // CURRENT WAY I HAVE THE QUOTES GOING AT RANDOM UPON SCREEN LOADING
        setInterval(rndQuotes, "30000");
 
