@@ -1248,68 +1248,65 @@ const quotes = [
 ];
 
 // QUOTES RANDOM FUNCTION
-let currentQuoteIndex = Math.floor(Math.random() * quotes.length);
-let quoteHistory = [];
-let intervalId; // To store the interval ID
+let currentQuoteIndex = -1;
+        const quoteHistory = [];
 
-function rndQuotes() {
-    const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
-    currentQuoteIndex = randomQuoteIndex;
-    eng.innerHTML = quotes[currentQuoteIndex];
-    quoteHistory.push(quotes[currentQuoteIndex]);
-}
+        function rndQuotes() {
+            if (currentQuoteIndex + 1 >= quotes.length) {
+                currentQuoteIndex = 0; // Reset to the first quote when reaching the end
+            } else {
+                currentQuoteIndex++;
+            }
 
-function prevQuote() {
-    if (quoteHistory.length > 0) {
-        const lastQuote = quoteHistory.pop();
-        quoteHistory.push(lastQuote);
-        currentQuoteIndex--;
-        if (currentQuoteIndex < 0) {
-            currentQuoteIndex = quotes.length - 1;
+            const rndQuote = quotes[currentQuoteIndex];
+            document.getElementById('eng').innerHTML = rndQuote;
+            quoteHistory.push(rndQuote);
         }
-        eng.innerHTML = quotes[currentQuoteIndex];
-    } else {
-        alert("No previous quotes available.");
-    }
 
-    // Reset interval when navigating
-    clearInterval(intervalId);
-    intervalId = setInterval(() => {
-        rndQuotes();
-    }, 15000);
-}
+        let intervalId;
 
-function copyToClipboard(text) {
-    const el = document.createElement('textarea');
-    el.value = text;
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand('copy');
-    document.body.removeChild(el);
-    alert('Quote copied to clipboard!');
-}
+        window.onload = function() {
+            clearInterval(intervalId); // Clear any existing intervals on page load
+            rndQuotes(); // Call once to show an initial quote
 
-// Initial display of a random quote
-rndQuotes();
+            intervalId = setInterval(rndQuotes, 30000); // Set the new interval
+        };
 
-// Set initial interval
-intervalId = setInterval(() => {
-    rndQuotes();
-}, 15000);
+        const btnNext = document.getElementById('btn');
+        btnNext.addEventListener('click', function() {
+            rndQuotes(); // Display a new quote immediately on button click
+            clearInterval(intervalId); // Clear the existing interval
+            intervalId = setInterval(rndQuotes, 30000); // Reset the interval after a new quote is displayed
+        });
 
-document.getElementById("next").addEventListener("click", function() {
-    rndQuotes();
+        const btnPrev = document.getElementById('btn-prev');
+        btnPrev.addEventListener('click', function() {
+            if (quoteHistory.length > 1) {
+                currentQuoteIndex--;
+                const prevQuote = quoteHistory[currentQuoteIndex];
+                document.getElementById('eng').innerHTML = prevQuote;
+            } else {
+                alert('No previous quote available.');
+            }
+        });
 
-    // Reset interval when navigating
-    clearInterval(intervalId);
-    intervalId = setInterval(() => {
-        rndQuotes();
-    }, 15000);
-});
+        function copyToClipboard(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            alert('Quote copied to clipboard!');
+        }
+    </script>
+</head>
+<body>
 
-document.getElementById("previous").addEventListener("click", function() {
-    prevQuote();
-});
+<div id="eng"></div>
+<button id="btn">New Maxim</button>
+<button onclick="copyToClipboard(document.getElementById('eng').innerText)">Copy Quote</button>
+<button id="btn-prev" onclick="prevQuote()">Previous Quote</button>
       </script>
             
   <%- include ('./partials/footer.ejs') %>
