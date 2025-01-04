@@ -32,11 +32,10 @@
                
          <main class="maxims-box">
              <div id="eng"></div>
-             
-             <button id="btn"> New Maxim</button>
-             <button onclick="copyToClipboard(document.getElementById('eng').innerText)">Copy Quote</button>
-             <button id="btn-prev" onclick="prevQuote()">Last Quota</button>
-   
+             <button id="next" onclick="rndQuotes()">Next</button>
+             <button id="previous" onclick="prevQuote()">Previous</button>
+             <button onclick="copyToClipboard(eng.innerHTML)">Copy Quote</button>
+                
          </main>
 
         <script>
@@ -1249,58 +1248,68 @@ const quotes = [
 ];
 
 // QUOTES RANDOM FUNCTION
+let currentQuoteIndex = Math.floor(Math.random() * quotes.length);
+let quoteHistory = [];
+let intervalId; // To store the interval ID
 
-let currentQuoteIndex = -1;
-        const quoteHistory = [];
+function rndQuotes() {
+    const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
+    currentQuoteIndex = randomQuoteIndex;
+    eng.innerHTML = quotes[currentQuoteIndex];
+    quoteHistory.push(quotes[currentQuoteIndex]);
+}
 
-        function rndQuotes() {
-            if (currentQuoteIndex + 1 >= quotes.length) {
-                currentQuoteIndex = -1; // Reset to the first quote when reaching the end
-            }
-
-            currentQuoteIndex++;
-            const rndQuote = quotes[currentQuoteIndex];
-            document.getElementById('eng').innerHTML = rndQuote;
-            quoteHistory.push(rndQuote);
+function prevQuote() {
+    if (quoteHistory.length > 0) {
+        const lastQuote = quoteHistory.pop();
+        quoteHistory.push(lastQuote);
+        currentQuoteIndex--;
+        if (currentQuoteIndex < 0) {
+            currentQuoteIndex = quotes.length - 1;
         }
-   let intervalId;
+        eng.innerHTML = quotes[currentQuoteIndex];
+    } else {
+        alert("No previous quotes available.");
+    }
 
-window.onload = function() {
-    clearInterval(intervalId); // Clear any existing intervals on page load
-    rndQuotes(); // Call once to show an initial quote
-
-    intervalId = setInterval(rndQuotes, 15000); // Set the new interval
-};
-
-const btnNext = document.getElementById('btn');
-        btnNext.addEventListener('click', function() {
-            rndQuotes(); // Display a new quote immediately on button click
-            clearInterval(intervalId); // Clear the existing interval
-            intervalId = setInterval(rndQuotes, 15000); // Reset the interval after a new quote is displayed
-        });
-
-        const btnPrev = document.getElementById('btn-prev');
-        btnPrev.addEventListener('click', function() {
-            if (quoteHistory.length > 1) {
-                currentQuoteIndex--;
-                const prevQuote = quoteHistory[currentQuoteIndex];
-                document.getElementById('eng').innerHTML = prevQuote;
-            } else {
-                alert('No previous quote available.');
-            }
-        });
-        // Reset the interval after a new quote is displayed
+    // Reset interval when navigating
+    clearInterval(intervalId);
+    intervalId = setInterval(() => {
+        rndQuotes();
+    }, 15000);
+}
 
 function copyToClipboard(text) {
-    const textarea = document.createElement('textarea');
-    textarea.value = text;
-    document.body.appendChild(textarea);
-    textarea.select();
+    const el = document.createElement('textarea');
+    el.value = text;
+    document.body.appendChild(el);
+    el.select();
     document.execCommand('copy');
-    document.body.removeChild(textarea);
+    document.body.removeChild(el);
     alert('Quote copied to clipboard!');
 }
 
+// Initial display of a random quote
+rndQuotes();
+
+// Set initial interval
+intervalId = setInterval(() => {
+    rndQuotes();
+}, 15000);
+
+document.getElementById("next").addEventListener("click", function() {
+    rndQuotes();
+
+    // Reset interval when navigating
+    clearInterval(intervalId);
+    intervalId = setInterval(() => {
+        rndQuotes();
+    }, 15000);
+});
+
+document.getElementById("previous").addEventListener("click", function() {
+    prevQuote();
+});
       </script>
             
   <%- include ('./partials/footer.ejs') %>
